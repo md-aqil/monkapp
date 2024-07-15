@@ -3,15 +3,9 @@
  */
 import React from "react";
 
-type InfoSectionProps = {
-  title: string;
-  subtitle: string;
-  description: string;
-  image: string;
-  reverse?: boolean;
-};
 
-const InfoSection: React.FC<InfoSectionProps> = ({
+
+const InfoSection = ({
   title,
   subtitle,
   description,

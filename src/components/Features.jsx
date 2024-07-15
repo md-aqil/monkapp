@@ -31,7 +31,7 @@ const featuresData = [
   },
 ];
 
-const Features: React.FC = () => {
+const Features = () => {
   return (
     <section className="flex overflow-hidden relative flex-col justify-end items-center self-stretch px-16 pt-20 w-full min-h-[382px] max-md:px-5 max-md:max-w-full">
       <img

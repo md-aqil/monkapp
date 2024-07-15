@@ -3,11 +3,12 @@
  */
 import React from "react";
 
-type HeaderProps = {
-  logo: string;
-};
 
-const Header: React.FC<HeaderProps> = ({ logo }) => {
+
+const Header = ({ logo,accounts, onConnect}) => {
+  console.log({accounts,onConnect})
+  const account = accounts?.length ? accounts[0].slice(0,6)+'....'+accounts[0].slice(-6) : "Connect Wallet"
+
   return (
     <header className="flex gap-5 justify-between items-center px-5 w-full max-w-[1284px] max-md:flex-wrap max-md:max-w-full">
       <img
@@ -22,14 +23,14 @@ const Header: React.FC<HeaderProps> = ({ logo }) => {
         <a href="#roadmap">Roadmap</a>
         <a href="#team">Team</a>
       </nav>
-      <button className="flex gap-2 justify-center self-stretch px-9 py-2 my-auto text-sm text-right bg-lime-400 rounded text-neutral-900 max-md:px-5">
-        <span className="my-auto">Connect Wallet</span>
-        <img
+      <button onClick={onConnect} className="flex gap-2 justify-center self-stretch px-9 py-2 my-auto text-sm text-right bg-lime-400 rounded text-neutral-900 max-md:px-5">
+        <span className="my-auto">{account}</span>
+        {!accounts?.length&&<img
+        src={"https://cdn.builder.io/api/v1/image/assets/TEMP/574eeb0fb2fda94c9fc850ebbb3d00782e68d4156aac39e2f4ed286a71dceeae?apiKey=b4d1b9e87b084579b1e2475047caf617&"}
           loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/574eeb0fb2fda94c9fc850ebbb3d00782e68d4156aac39e2f4ed286a71dceeae?apiKey=b4d1b9e87b084579b1e2475047caf617&"
           alt=""
           className="shrink-0 w-6 aspect-square"
-        />
+        />}
       </button>
     </header>
   );

@@ -3,11 +3,9 @@
  */
 import React from "react";
 
-type HeroProps = {
-  heroImage: string;
-};
 
-const Hero: React.FC<HeroProps> = ({ heroImage }) => {
+
+const Hero= ({ heroImage }) => {
   return (
     <section className="z-10 mt-28 w-full max-w-[1361px] max-md:mt-10 max-md:max-w-full">
       <div className="flex gap-5 max-md:flex-col max-md:gap-0">

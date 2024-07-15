@@ -3,13 +3,8 @@
  */
 import React from "react";
 
-type FeatureCardProps = {
-  number: string;
-  title: string;
-  description: string;
-};
 
-const FeatureCard: React.FC<FeatureCardProps> = ({
+const FeatureCard= ({
   number,
   title,
   description,
