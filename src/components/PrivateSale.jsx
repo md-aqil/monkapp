@@ -46,8 +46,10 @@ const PrivateSale = ({web3,accounts}) => {
                   type="button"
                   className="flex-1 justify-center px-10 py-3.5 bg-lime-300 rounded border border-black border-solid shadow-sm max-md:px-5"
                 >
-                  Enable BUSD
+                  Enable USD
                 </button>
+
+
                 <button
                 onClick={swap}
                   type="button"
@@ -55,6 +57,8 @@ const PrivateSale = ({web3,accounts}) => {
                 >
                   Buy
                 </button>
+
+
               </div>
               <div className="justify-center px-12 py-3.5 mt-6 text-xl leading-6 text-center text-lime-300 rounded border border-dashed border-lime-300 border-opacity-40 max-md:px-5 max-md:max-w-full">
                 You get: <span className="text-lime-300">15533.333</span> Monk
@@ -108,6 +112,9 @@ const PrivateSale = ({web3,accounts}) => {
       </div>
      
     </section>
+
+
+    
   );
 };
 

@@ -5,51 +5,18 @@ import React from "react";
 
 
 
-const InfoSection = ({
-  title,
-  subtitle,
-  description,
-  image,
-  reverse = false,
-}) => {
+const InfoSection = () => {
   return (
-    <div
-      className={`w-full ${
-        reverse ? "flex-row-reverse" : ""
-      }`}
-    >
-      <div  className={`flex gap-5 max-md:flex-col max-md:gap-0 ${
-        reverse ? "flex-row-reverse" : ""
-      }`}>
-        <div
-          className={`flex flex-col  max-md:ml-0 max-md:w-full`}
-        >
-          <div className="flex flex-col self-stretch my-auto text-xl tracking-tight max-md:mt-10 max-md:max-w-full">
-            <h2 className="text-6xl tracking-tighter bg-clip-text leading-[67.2px] max-md:max-w-full max-md:text-4xl text-white">
-              {title}
-            </h2>
-            <div className="mt-12 font-semibold text-white leading-[150%] max-md:mt-10 max-md:max-w-full">
-              <span className="text-lime-400">{subtitle}</span>
-            </div>
-            <div className="mt-9 leading-8 text-lime-400 max-md:max-w-full">
-              <span className="text-stone-300">{description}</span>
-            </div>
-          </div>
-        </div>
-        <div
-          className={`flex flex-col ml-5 ${
-            reverse ? "w-[50%]" : "w-[50%]"
-          } max-md:ml-0 max-md:w-full`}
-        >
-          <img
-            loading="lazy"
-            src={image}
-            alt="Information illustration"
-            className="grow shrink-0 max-w-full aspect-[0.85] w-[263px] max-md:mt-10"
-          />
-        </div>
-      </div>
-    </div>
+     <div>
+     
+            <h2 class="text-6xl text-center text-white leading-[80px] text-center max-md:max-w-full max-md:text-4xl max-md:leading-[64px]">
+            Business ventures of Black Monk
+              
+              </h2>
+              
+
+              
+     </div>
   );
 };
 

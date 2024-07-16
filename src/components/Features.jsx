@@ -32,6 +32,7 @@ const featuresData = [
 
 const Features = () => {
   return (
+    
     <section className="flex overflow-hidden relative flex-col justify-end items-center container">
      
       <div className="relative ">
