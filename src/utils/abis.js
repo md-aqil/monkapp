@@ -854,18 +854,24 @@ const BUSD_ABI_TEST = [
 	// if(chainId==MAIN_CHAIN_ID) return BUSD_ABI
 	return BUSD_ABI_TEST
 }
+
  export const getBusdToken = (chainId='')=>{
 	// if(chainId==MAIN_CHAIN_ID) return BUSD_ADDRESS
 	return BUSD_ADDRESS_TEST
 }
+
  export const getPrivateSaleABI = (chainId='')=>{
 	
 	// if(chainId==MAIN_CHAIN_ID) return TOKEN_ABI
 	return TOKEN_ABI
 }
+
  export const getPrivateSaleToken = (chainId='')=>{
-	return '0x88B127E5d112ED2D95b31d65De0a8f5EB36761c2'
+	return '0x0227587AC1E0A153e4B71aD81f398CC31e8B2a7e'
+
 	// return '0x88B127E5d112ED2D95b31d65De0a8f5EB36761c2'
+
 	// if(chainId==MAIN_CHAIN_ID) return PRIVATE_SALE_ADDRESS
+	
 	return PRIVATE_SALE_ADDRESS_TEST
 }

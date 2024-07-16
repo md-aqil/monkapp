@@ -8,14 +8,16 @@ const PrivateSale = ({web3,accounts}) => {
   console.log({web3,accounts})
   const {amount,enableBusd,swap,setAmount} = useSwap(web3,accounts)
   return (
-    <section className="mt-36 max-md:mt-10 max-md:max-w-full">
-      <h2 className="text-6xl text-center text-lime-300 leading-[80px] w-[975px] max-md:max-w-full max-md:text-4xl max-md:leading-[64px]">
+    <section className="mt-36 max-md:mt-10 max-md:max-w-full container relative">
+
+      <h2 className="text-6xl text-center text-white leading-[80px] text-center max-md:max-w-full max-md:text-4xl max-md:leading-[64px]">
         Participate In The MONK Token <br />
         <span className="text-lime-300">Private Sale</span>
       </h2>
-      <div className="w-full max-w-[1210px] max-md:max-w-full">
+
+      <div className="w-full  max-md:max-w-full px-28">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          <div className="flex flex-col w-[42%] max-md:ml-0 max-md:w-full">
+          <div className="flex flex-col w-[50%] max-md:ml-0 max-md:w-full">
             <form className="flex flex-col mt-24 max-md:mt-10 max-md:max-w-full">
               <div className="flex gap-5 justify-between text-sm max-md:flex-wrap max-md:max-w-full">
                 <label
@@ -28,22 +30,17 @@ const PrivateSale = ({web3,accounts}) => {
                   Amount: 100
                 </div>
               </div>
-              <div className="flex gap-5 p-5 mt-3.5 bg-white rounded-lg border border-solid shadow-sm border-zinc-950 max-md:flex-wrap max-md:max-w-full">
+              <div className="flex gap-5 p-2 mt-3.5 bg-white rounded-lg border border-solid shadow-sm border-zinc-950 max-md:flex-wrap max-md:max-w-full">
                 <input
                 onChange={(e)=>setAmount(e.target.value)}
                   type="number"
                   id="busdAmount"
-                  className="flex-auto my-auto text-base leading-6 text-neutral-600"
+                  className="flex-auto my-auto text-base leading-6  p-3 text-neutral-600"
                   placeholder="Enter BUSD Amount"
                 />
-                <button
-                  type="button"
-                  className="justify-center px-3 py-2 text-sm leading-6 text-center whitespace-nowrap rounded bg-lime-300 bg-opacity-50 text-teal-950"
-                >
-                  Max
-                </button>
+               
               </div>
-              <div className="flex gap-5 mt-9 text-base leading-4 text-center text-black max-md:flex-wrap">
+              <div className="flex gap-5 mt-5 text-base leading-4 text-center text-black max-md:flex-wrap">
                 <button
                 onClick={enableBusd}
                   type="button"
@@ -68,32 +65,27 @@ const PrivateSale = ({web3,accounts}) => {
               </p>}
             </form>
           </div>
-          <div className="flex flex-col ml-5 w-[58%] max-md:ml-0 max-md:w-full">
-            <div className="flex overflow-hidden relative flex-col grow items-start px-12 py-20 min-h-[679px] max-md:px-5 max-md:max-w-full">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/d201a67a1cb5e4a49013158a78e01a97f1c58a60652d201df367945934975e40?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-                alt=""
-                className="object-cover absolute inset-0 size-full"
-              />
+          <div className="flex flex-col ml-5 w-[50%] max-md:ml-0 max-md:w-full">
+            <div className="flex overflow-hidden relative flex-col grow items-start px-12 py-20 max-md:px-5 max-md:max-w-full">
+              
               <div className="flex relative flex-col justify-center items-start py-2 pl-6 mt-2 max-w-full text-base leading-7 text-neutral-200 w-[662px] max-md:pl-5">
                 <ul>
                   <li className="flex gap-2.5">
-                    <div className="shrink-0 my-auto w-3 h-3 bg-yellow-400 rounded-full"></div>
+                    <div className="shrink-0 my-auto w-3 h-3 bg-lime-400 rounded-full"></div>
                     <span>Minimum buy= 125 BUSD, Maximum= 6250</span>
                   </li>
                   <li className="flex gap-2.5 mt-6">
-                    <div className="shrink-0 my-auto w-3 h-3 bg-yellow-400 rounded-full"></div>
+                    <div className="shrink-0 my-auto w-3 h-3 bg-lime-400 rounded-full"></div>
                     <span>Total Token supply: 1,000,000,000 SiFi</span>
                   </li>
                   <li className="flex gap-2.5 mt-6">
-                    <div className="shrink-0 my-auto w-3 h-3 bg-yellow-400 rounded-full"></div>
+                    <div className="shrink-0 my-auto w-3 h-3 bg-lime-400 rounded-full"></div>
                     <span>
                       Tokens allocated for Private Sale: 190,000,000 SiFi
                     </span>
                   </li>
                   <li className="flex gap-2.5 mt-6">
-                    <div className="shrink-0 my-auto w-3 h-3 bg-yellow-400 rounded-full"></div>
+                    <div className="shrink-0 my-auto w-3 h-3 bg-lime-400 rounded-full"></div>
                     <span>
                       Note: Earn referral rewards in BUSD by inviting your
                       friends to buy SiFi tokens.
@@ -114,6 +106,7 @@ const PrivateSale = ({web3,accounts}) => {
           </div>
         </div>
       </div>
+     
     </section>
   );
 };

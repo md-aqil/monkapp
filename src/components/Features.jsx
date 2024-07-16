@@ -6,41 +6,35 @@ import FeatureCard from "./FeatureCard";
 
 const featuresData = [
   {
-    number: "One",
+    title: "Hyperdeflationary token",
+    description:
+      "Total supply of 1 Billion keeps on burning during a season.",
+  },
+  {
     title: "Elastic Supply",
     description:
       "At the end of every season, Relaunch event sets supply to 1 Bn.",
   },
   {
-    number: "Two",
-    title: "Elastic Supply",
+    title: "Automated monetary policy",
     description:
-      "At the end of every season, Relaunch event sets supply to 1 Bn.",
+      "The protocol runs itself throughout, managing token supply.",
   },
+
+ 
   {
-    number: "Three",
-    title: "Elastic Supply",
+    title: "Reserve Backed",
     description:
-      "At the end of every season, Relaunch event sets supply to 1 Bn.",
-  },
-  {
-    number: "Four",
-    title: "Elastic Supply",
-    description:
-      "At the end of every season, Relaunch event sets supply to 1 Bn.",
+      "blackmonk tokens are bought from tax funds and collected in season reserve.",
   },
 ];
 
+
 const Features = () => {
   return (
-    <section className="flex overflow-hidden relative flex-col justify-end items-center self-stretch px-16 pt-20 w-full min-h-[382px] max-md:px-5 max-md:max-w-full">
-      <img
-        loading="lazy"
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/eda686024bee1a21c36d24f2f77e89888f9206ea6b44771b09671884be106465?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-        alt=""
-        className="object-cover absolute inset-0 size-full"
-      />
-      <div className="relative mt-20 w-full max-w-[1276px] max-md:mt-10 max-md:max-w-full">
+    <section className="flex overflow-hidden relative flex-col justify-end items-center container">
+     
+      <div className="relative ">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           {featuresData.map((feature, index) => (
             <div
@@ -52,6 +46,7 @@ const Features = () => {
           ))}
         </div>
       </div>
+
     </section>
   );
 };

@@ -7,29 +7,31 @@ import React from "react";
 
 const Hero= ({ heroImage }) => {
   return (
-    <section className="z-10 mt-28 w-full max-w-[1361px] max-md:mt-10 max-md:max-w-full">
+    <section className="z-10 mt-20 container ">
       <div className="flex gap-5 max-md:flex-col max-md:gap-0">
         <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-          <div className="flex z-10 flex-col justify-center px-5 pt-2.5 text-7xl leading-[80.52px] max-md:max-w-full max-md:text-4xl">
-            <h1 className="font-light tracking-normal text-white max-md:max-w-full max-md:text-4xl">
-              <span>Where </span>
-              <span className="text-white">Business DAO </span>
+
+          <div className="flex z-10 flex-col justify-center px-5 pt-2.5 text-5xl ">
+
+            <h1 className=" text-white ">
+              
+            Cultivationg Profitable
             </h1>
-            <div className="flex gap-5 mt-6 tracking-normal whitespace-nowrap max-md:flex-wrap max-md:text-4xl">
-              <div className="flex-auto text-yellow-400 border-2 border-yellow-400 border-solid max-md:max-w-full max-md:text-4xl">
-                supercharges
+
+            <div className="flex gap-5 mt-6 tracking-normal whitespace-nowrap max-md:flex-wrap max-md:text-3xl">
+              <div className="flex-auto text-lime-400 font-semibold ">
+              Web3 Venture
               </div>
-              <div className="flex-auto my-auto text-white max-md:text-4xl">
-                Defi
-              </div>
+              
             </div>
-            <p className="mt-9 text-xl tracking-tight leading-8 text-white max-md:max-w-full">
-              Explore Unira's innovative blend of gamified DeFi protocol and
-              Business DAO, driving sustainable treasury revenue through NFT IP
-              building.
+            <p className="mt-9 text-xl tracking-tight leading-8 text-stone-300 max-md:max-w-full">
+            Explore the magic of Treasury backed DeFi, driving profitable Web3 businesses
+ like NFT IPs, RWA, Liquidity provider as node validators, and acquiring
+promising projects.
             </p>
+
             <button className="flex gap-2 justify-center self-start px-9 py-2.5 mt-6 text-sm text-right bg-white rounded text-neutral-900 max-md:px-5">
-              <span className="my-auto">BUY PRESALE</span>
+              <span className="my-auto">BUY Monk</span>
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/b2aea4d0165c3afc11c78e8bf3a12f9267e1352676755f61b3f568933144b402?apiKey=b4d1b9e87b084579b1e2475047caf617&"
@@ -37,6 +39,7 @@ const Hero= ({ heroImage }) => {
                 className="shrink-0 w-6 aspect-square"
               />
             </button>
+            
           </div>
         </div>
         <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">

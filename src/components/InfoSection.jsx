@@ -14,31 +14,31 @@ const InfoSection = ({
 }) => {
   return (
     <div
-      className={`w-full max-w-[1130px] max-md:max-w-full ${
+      className={`w-full ${
         reverse ? "flex-row-reverse" : ""
       }`}
     >
-      <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+      <div  className={`flex gap-5 max-md:flex-col max-md:gap-0 ${
+        reverse ? "flex-row-reverse" : ""
+      }`}>
         <div
-          className={`flex flex-col ${
-            reverse ? "w-[26%]" : "w-[74%]"
-          } max-md:ml-0 max-md:w-full`}
+          className={`flex flex-col  max-md:ml-0 max-md:w-full`}
         >
           <div className="flex flex-col self-stretch my-auto text-xl tracking-tight max-md:mt-10 max-md:max-w-full">
-            <h2 className="text-6xl tracking-tighter bg-clip-text leading-[67.2px] max-md:max-w-full max-md:text-4xl">
+            <h2 className="text-6xl tracking-tighter bg-clip-text leading-[67.2px] max-md:max-w-full max-md:text-4xl text-white">
               {title}
             </h2>
             <div className="mt-12 font-semibold text-white leading-[150%] max-md:mt-10 max-md:max-w-full">
-              <span className="text-yellow-400">{subtitle}</span>
+              <span className="text-lime-400">{subtitle}</span>
             </div>
-            <div className="mt-9 leading-8 text-yellow-400 max-md:max-w-full">
+            <div className="mt-9 leading-8 text-lime-400 max-md:max-w-full">
               <span className="text-stone-300">{description}</span>
             </div>
           </div>
         </div>
         <div
           className={`flex flex-col ml-5 ${
-            reverse ? "w-[74%]" : "w-[26%]"
+            reverse ? "w-[50%]" : "w-[50%]"
           } max-md:ml-0 max-md:w-full`}
         >
           <img

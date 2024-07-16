@@ -19,7 +19,7 @@ const Header = ({ logo,accounts, onConnect}) => {
         alt="Company logo"
         className="shrink-0 self-stretch max-w-full aspect-[4] w-[187px]"
       />
-      <nav className="flex gap-4 self-stretch my-auto text-base text-zinc-100 text-opacity-80">
+      <nav className="flex gap-10 self-stretch my-auto text-base text-zinc-100 text-opacity-80">
         <a href="#project-info">Project Info</a>
         <a href="#tokenomics">Tokenomics</a>
         <a href="#roadmap">Roadmap</a>

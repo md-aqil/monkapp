@@ -12,7 +12,7 @@ export default function HomePage(){
     <Layout accounts={accounts} onConnect={connect}>
     <Hero heroImage="https://cdn.builder.io/api/v1/image/assets/TEMP/3573e3280f49cc7f49d59579f22a5afd8e8594c131efc2c0f8782d6613aaf81a?apiKey=b4d1b9e87b084579b1e2475047caf617&" />
     <Features />
-    <div className="flex flex-col items-center px-5 mt-28 w-full max-w-[1285px] max-md:mt-10 max-md:max-w-full">
+    <div className="flex flex-col items-center  mt-28 w-full container max-md:mt-10 max-md:max-w-full gap-[100px]">
       <InfoSection
         title="BlackMonk as DeFI"
         subtitle="Passively saving $UNI for holders"
