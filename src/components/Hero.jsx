@@ -11,19 +11,14 @@ const Hero= ({ heroImage }) => {
       <div className="flex gap-5 max-md:flex-col max-md:gap-0">
         <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
 
-          <div className="flex z-10 flex-col justify-center px-5 pt-2.5 text-5xl ">
+          <div className="flex z-10 flex-col justify-center px-5 pt-2.5 text-5xl  line-height[1.5]">
 
-            <h1 className=" text-white ">
+            <h1 className=" text-white hf ">
               
-            Cultivationg Profitable
+            Cultivating Profitable <span className="text-lime-400"> Web3 Ventures</span>
             </h1>
 
-            <div className="flex gap-5 mt-6 tracking-normal whitespace-nowrap max-md:flex-wrap max-md:text-3xl">
-              <div className="flex-auto text-lime-400 font-semibold ">
-              Web3 Venture
-              </div>
-              
-            </div>
+          
             <p className="mt-9 text-xl tracking-tight leading-8 text-stone-300 max-md:max-w-full">
             Explore the magic of Treasury backed DeFi, driving profitable Web3 businesses
  like NFT IPs, RWA, Liquidity provider as node validators, and acquiring
@@ -31,7 +26,7 @@ promising projects.
             </p>
 
             <button className="flex gap-2 justify-center self-start px-9 py-2.5 mt-6 text-sm text-right bg-white rounded text-neutral-900 max-md:px-5">
-              <span className="my-auto">BUY Monk</span>
+              <span className="my-auto">Buy BMONK</span>
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/b2aea4d0165c3afc11c78e8bf3a12f9267e1352676755f61b3f568933144b402?apiKey=b4d1b9e87b084579b1e2475047caf617&"

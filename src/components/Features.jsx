@@ -8,12 +8,12 @@ const featuresData = [
   {
     title: "Hyperdeflationary token",
     description:
-      "Total supply of 1 Billion keeps on burning during a season.",
+      "Total supply of 330 Million keeps on burning during a season.",
   },
   {
     title: "Elastic Supply",
     description:
-      "At the end of every season, Relaunch event sets supply to 1 Bn.",
+      "At the end of every season, Relaunch event sets supply to 330 Million",
   },
   {
     title: "Automated monetary policy",
@@ -25,7 +25,7 @@ const featuresData = [
   {
     title: "Reserve Backed",
     description:
-      "blackmonk tokens are bought from tax funds and collected in season reserve.",
+      "CAKE tokens are bought from tax funds and collected in season reserve.",
   },
 ];
 

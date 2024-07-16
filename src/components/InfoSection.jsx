@@ -9,12 +9,7 @@ const InfoSection = () => {
   return (
      <div>
      
-            <h2 class="text-6xl text-center text-white leading-[80px] text-center max-md:max-w-full max-md:text-4xl max-md:leading-[64px]">
-            Business ventures of Black Monk
-              
-              </h2>
-              
-
+      
               
      </div>
   );
