@@ -27,7 +27,7 @@ export default function useConnect() {
             params: [
               {
                 chainId: "0x61",
-                chainName: "BNB Smart Chain Test net",
+                chainName: "BSC Smart Chain Test net",
                 rpcUrls: [
                   "https://data-seed-prebsc-1-s1.bnbchain.org:8545",
                 ],

@@ -866,11 +866,8 @@ const BUSD_ABI_TEST = [
 }
 
  export const getPrivateSaleToken = (chainId='')=>{
-	return '0x0227587AC1E0A153e4B71aD81f398CC31e8B2a7e'
-
-	// return '0x88B127E5d112ED2D95b31d65De0a8f5EB36761c2'
-
+	// return '0x0227587AC1E0A153e4B71aD81f398CC31e8B2a7e'
+	return '0x88B127E5d112ED2D95b31d65De0a8f5EB36761c2'
 	// if(chainId==MAIN_CHAIN_ID) return PRIVATE_SALE_ADDRESS
-	
 	return PRIVATE_SALE_ADDRESS_TEST
 }
