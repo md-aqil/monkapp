@@ -14,6 +14,31 @@ export default function useConnect() {
     const web3Instance = new Web3(ethereumProvider);
     setProvider(ethereumProvider);
     setWeb3(web3Instance);
+    try {
+      await ethereumProvider.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: "0x61" }],
+      });
+    } catch (switchError) {
+      if (switchError.code === 4902) {
+        try {
+          await ethereumProvider.request({
+            method: "wallet_addEthereumChain",
+            params: [
+              {
+                chainId: "0x61",
+                chainName: "BNB Smart Chain Test net",
+                rpcUrls: [
+                  "https://data-seed-prebsc-1-s1.bnbchain.org:8545",
+                ],
+              },
+            ],
+          });
+        } catch (e) {
+          console.log("error");
+        }
+      }
+    }
   }
 
   async function connect() {

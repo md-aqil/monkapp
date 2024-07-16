@@ -861,7 +861,6 @@ const BUSD_ABI_TEST = [
 }
 
  export const getPrivateSaleABI = (chainId='')=>{
-	
 	// if(chainId==MAIN_CHAIN_ID) return TOKEN_ABI
 	return TOKEN_ABI
 }
