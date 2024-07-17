@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import Features from "../components/Features";
-// import InfoSection from "../components/InfoSection";
+import InfoSection from "../components/InfoSection";
 import PrivateSale from "../components/PrivateSale";
 import useConnect from "../hooks/useConnect";
 
@@ -63,6 +63,8 @@ export default function HomePage(){
     </div>
   </div>
 </section>
+
+<InfoSection />
 
 <section className="flex justify-center items-center px-16 py-20 bg-neutral-900 max-md:px-5">
   <div className="flex flex-col px-1.5 pt-2 mt-5 max-w-full w-[694px]">

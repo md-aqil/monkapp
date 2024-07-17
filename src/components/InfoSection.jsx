@@ -7,11 +7,93 @@ import React from "react";
 
 const InfoSection = () => {
   return (
-     <div>
-     
-      
-              
-     </div>
+   <>
+   <section className="flex flex-col items-center p-20 bg-neutral-900 max-md:px-5">
+  <h1 className="mt-7 text-6xl tracking-tighter text-center text-lime-300 leading-[67px] w-[686px] max-md:max-w-full max-md:text-4xl max-md:leading-[54px]">
+    Cultivationg Profitable <br /> <span className="text-lime-300">Web3 Venture</span>
+  </h1>
+  <div className="justify-center px-20 py-6 mt-32 w-full  max-md:px-5 container max-md:mt-10 max-md:max-w-full">
+    <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+      <div className="flex flex-col w-3/5 max-md:ml-0 max-md:w-full">
+        <article className="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
+          <h2 className="text-5xl font-semibold tracking-tighter text-white leading-[61.88px] max-md:max-w-full max-md:text-4xl">
+            NFT IP Studio
+          </h2>
+          <hr className="shrink-0 mt-6 h-px border border-solid bg-zinc-300 bg-opacity-50 border-zinc-300 border-opacity-50 max-md:max-w-full" />
+          <p className="mt-7 text-xl leading-8 text-zinc-400 max-md:max-w-full">
+            Developing unique IP brands of popular NFT characters like global chocolate brand.
+          </p>
+        </article>
+      </div>
+      <div className="flex flex-col ml-5 w-2/5 max-md:ml-0 max-md:w-full">
+        <figure className="flex flex-col grow justify-center rounded-md max-md:mt-10">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/def1f1dbd8ab29c387949a4bde727536d25541c1833bd67b8ac6d32313fbbaab?apiKey=b4d1b9e87b084579b1e2475047caf617&" className="w-full aspect-[1.19]" alt="NFT IP Studio illustration" />
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div className="justify-center px-20 py-6 w-full max-w-[1315px] max-md:px-5 max-md:max-w-full">
+    <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+      <div className="flex flex-col w-[41%] max-md:ml-0 max-md:w-full">
+        <figure className="flex flex-col grow justify-center rounded-md max-md:mt-10">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/a65d5a7fe23fba34de20992c0d9ff1128b6f615ae86a02e044698047203069fb?apiKey=b4d1b9e87b084579b1e2475047caf617&" className="object-cover overflow-hidden pb-20 w-full aspect-[1.19]" alt="RWA illustration" />
+        </figure>
+      </div>
+      <div className="flex flex-col ml-5 w-[59%] max-md:ml-0 max-md:w-full">
+        <article className="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
+          <h2 className="text-5xl font-semibold tracking-tighter text-white leading-[61.88px] max-md:max-w-full max-md:text-4xl">
+            RWA
+          </h2>
+          <hr className="shrink-0 mt-6 h-px border border-solid bg-zinc-300 bg-opacity-50 border-zinc-300 border-opacity-50 max-md:max-w-full" />
+          <p className="mt-7 text-xl leading-8 text-zinc-400 max-md:max-w-full">
+            Investing in Real World Assets like real estate and offering investment opportunities to global investors into them.
+          </p>
+        </article>
+      </div>
+    </div>
+  </div>
+  <div className="justify-center px-20 py-6 w-full max-w-[1315px] max-md:px-5 max-md:max-w-full">
+    <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+      <div className="flex flex-col w-3/5 max-md:ml-0 max-md:w-full">
+        <article className="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
+          <h2 className="text-5xl font-semibold tracking-tighter text-white leading-[61.88px] max-md:max-w-full max-md:text-4xl">
+            Liquidity Provider
+          </h2>
+          <hr className="shrink-0 mt-6 h-px border border-solid bg-zinc-300 bg-opacity-50 border-zinc-300 border-opacity-50 max-md:max-w-full" />
+          <p className="mt-7 text-xl leading-8 text-zinc-400 max-md:max-w-full">
+            Our Treasury will provide liquidity to blockchains for farming programs, node validator staking and earn yields on them.
+          </p>
+        </article>
+      </div>
+      <div className="flex flex-col ml-5 w-2/5 max-md:ml-0 max-md:w-full">
+        <figure className="flex flex-col grow justify-center rounded-md max-md:mt-10">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/dc373c1cc118b62fbe0dfc6c7e45e64e1f33c6a597f563a3074862f1169e75a4?apiKey=b4d1b9e87b084579b1e2475047caf617&" className="w-full aspect-[1.19]" alt="Liquidity Provider illustration" />
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div className="justify-center px-20 py-6 w-full max-w-[1315px] max-md:px-5 max-md:max-w-full">
+    <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+      <div className="flex flex-col w-[41%] max-md:ml-0 max-md:w-full">
+        <figure className="flex flex-col grow justify-center w-full bg-white rounded-md max-md:mt-10">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3f6dd96ae5810e57ad68f33e3a7c0d59f70456800f26f005d3583c4ecce3e1ce?apiKey=b4d1b9e87b084579b1e2475047caf617&" className="w-full aspect-[1.19]" alt="Buying Projects illustration" />
+        </figure>
+      </div>
+      <div className="flex flex-col ml-5 w-[59%] max-md:ml-0 max-md:w-full">
+        <article className="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
+          <h2 className="text-5xl font-semibold tracking-tighter text-white leading-[61.88px] max-md:max-w-full max-md:text-4xl">
+            Buying Projects
+          </h2>
+          <hr className="shrink-0 mt-6 h-px border border-solid bg-zinc-300 bg-opacity-50 border-zinc-300 border-opacity-50 max-md:max-w-full" />
+          <p className="mt-7 text-xl leading-8 text-zinc-400 max-md:max-w-full">
+            We invest in promising revenue generating Web3 projects to acquire major shares in them.
+          </p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+   </>
   );
 };
 

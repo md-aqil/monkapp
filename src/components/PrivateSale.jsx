@@ -69,7 +69,7 @@ const PrivateSale = ({web3,accounts}) => {
 
               </div>
               <div className="justify-center px-12 py-3.5 mt-6 text-xl leading-6 text-center text-lime-300 rounded border border-dashed border-lime-300 border-opacity-40 max-md:px-5 max-md:max-w-full">
-              1 USDT = (1/0.6) BMONK
+              {/* 1 USDT = (1/0.6) BMONK */} You will get: 
               </div>
               {!accounts.length&&<p className="mt-3 text-xs leading-4 text-stone-300 max-md:max-w-full">
                 *Web3 wallet not connected. Open this site in Trust <br />{" "}
