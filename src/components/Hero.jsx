@@ -7,13 +7,13 @@ import React from "react";
 
 const Hero= ({ heroImage }) => {
   return (
-    <section className="z-10 mt-20 container ">
+    <section className="z-10 mt-20 container hero-sec">
       <div className="flex gap-5 max-md:flex-col max-md:gap-0">
         <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
 
-          <div className="flex z-10 flex-col justify-center px-5 pt-2.5 text-5xl  line-height[1.5]">
+          <div className="flex z-10 flex-col justify-center px-5 pt-2.5 text-5xl">
 
-            <h1 className=" text-white hf ">
+            <h1 className=" text-white heading">
               
             Cultivating Profitable <span className="text-lime-400"> Web3 Ventures</span>
             </h1>

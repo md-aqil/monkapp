@@ -7,7 +7,7 @@ import { ToastContainer } from "react-toastify";
 
 const Layout = ({ children, onConnect, accounts }) => {
   return (
-    <div className="flex flex-col items-center pt-5 bg-neutral-900">
+    <div className="w-full items-center pt-5 bg-neutral-900">
       <ToastContainer />
       <Header
         accounts={accounts}

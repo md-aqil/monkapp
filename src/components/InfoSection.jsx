@@ -8,11 +8,12 @@ import React from "react";
 const InfoSection = () => {
   return (
    <>
-   <section className="flex flex-col items-center p-20 bg-neutral-900 max-md:px-5">
-  <h1 className="mt-7 text-6xl tracking-tighter text-center text-lime-300 leading-[67px] w-[686px] max-md:max-w-full max-md:text-4xl max-md:leading-[54px]">
+   <section className="flex flex-col items-center p-20 bg-neutral-900 max-md:px-5 info-section">
+  <h1 className="text-6xl tracking-tighter heading text-center text-white">
     Cultivationg Profitable <br /> <span className="text-lime-300">Web3 Venture</span>
   </h1>
-  <div className="justify-center px-20 py-6 mt-32 w-full  max-md:px-5 container max-md:mt-10 max-md:max-w-full">
+
+  <div className="justify-center px-20 py-6 mt-5 w-full  max-md:px-5 container max-md:mt-10 max-md:max-w-full">
     <div className="flex gap-5 max-md:flex-col max-md:gap-0">
       <div className="flex flex-col w-3/5 max-md:ml-0 max-md:w-full">
         <article className="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
@@ -33,10 +34,11 @@ const InfoSection = () => {
     </div>
   </div>
   <div className="justify-center px-20 py-6 w-full max-w-[1315px] max-md:px-5 max-md:max-w-full">
-    <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+
+    <div className="flex gap-5 max-md:flex-col max-md:gap-0 m-reverse">
       <div className="flex flex-col w-[41%] max-md:ml-0 max-md:w-full">
         <figure className="flex flex-col grow justify-center rounded-md max-md:mt-10">
-          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/a65d5a7fe23fba34de20992c0d9ff1128b6f615ae86a02e044698047203069fb?apiKey=b4d1b9e87b084579b1e2475047caf617&" className="object-cover overflow-hidden pb-20 w-full aspect-[1.19]" alt="RWA illustration" />
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/a65d5a7fe23fba34de20992c0d9ff1128b6f615ae86a02e044698047203069fb?apiKey=b4d1b9e87b084579b1e2475047caf617&" className="object-cover overflow-hidden  w-full aspect-[1.19]" alt="RWA illustration" />
         </figure>
       </div>
       <div className="flex flex-col ml-5 w-[59%] max-md:ml-0 max-md:w-full">
@@ -73,7 +75,7 @@ const InfoSection = () => {
     </div>
   </div>
   <div className="justify-center px-20 py-6 w-full max-w-[1315px] max-md:px-5 max-md:max-w-full">
-    <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+    <div className="flex gap-5 max-md:flex-col max-md:gap-0 m-reverse">
       <div className="flex flex-col w-[41%] max-md:ml-0 max-md:w-full">
         <figure className="flex flex-col grow justify-center w-full bg-white rounded-md max-md:mt-10">
           <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3f6dd96ae5810e57ad68f33e3a7c0d59f70456800f26f005d3583c4ecce3e1ce?apiKey=b4d1b9e87b084579b1e2475047caf617&" className="w-full aspect-[1.19]" alt="Buying Projects illustration" />

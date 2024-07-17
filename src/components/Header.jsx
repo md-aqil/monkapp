@@ -7,12 +7,12 @@ import { ToastContainer } from "react-toastify";
 
 
 const Header = ({ logo,accounts, onConnect}) => {
-  
+
   console.log({accounts,onConnect})
   const account = accounts?.length ? accounts[0].slice(0,6)+'....'+accounts[0].slice(-6) : "Connect Wallet"
 
   return (
-    <header className="flex gap-5 justify-between items-center px-5 w-full container max-md:flex-wrap max-md:max-w-full">
+    <header className="main-header flex gap-5 justify-between items-center px-5 w-full container max-md:max-w-full">
 
       <img
         loading="lazy"

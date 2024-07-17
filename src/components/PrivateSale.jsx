@@ -12,12 +12,13 @@ const PrivateSale = ({web3,accounts}) => {
   return (
     <section className="mt-36 max-md:mt-10 max-md:max-w-full container relative">
 
-      <h2 className="text-6xl text-center text-white leading-[80px] text-center heading">
+      <h2 className="text-5xl text-center text-white  text-center heading">
         Participate In The BMONK Token <br />
         <span className="text-lime-300">Private Sale</span>
       </h2>
 
-      <div className="w-full  max-md:max-w-full px-28">
+      <div className="w-full  max-md:max-w-full px-28  ps-row">
+        
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-[50%] max-md:ml-0 max-md:w-full">
 
@@ -81,10 +82,11 @@ const PrivateSale = ({web3,accounts}) => {
 
 
           </div>
+          
           <div className="flex flex-col ml-5 w-[50%] max-md:ml-0 max-md:w-full">
-            <div className="flex overflow-hidden relative flex-col grow items-start px-12 py-20 max-md:px-5 max-md:max-w-full">
+            <div className="flex overflow-hidden relative flex-col grow items-start px-12 pt-5 max-md:px-5 max-md:max-w-full">
               
-              <div className="flex relative flex-col justify-center items-start py-2 pl-6 mt-2 max-w-full text-base leading-7 text-neutral-200 w-[662px] max-md:pl-5">
+              <div className="flex relative flex-col justify-center items-start  mt-2 max-w-full text-base leading-7 text-neutral-200 ">
                 <ul>
                   <li className="flex gap-2.5">
                     <div className="shrink-0 my-auto w-3 h-3 bg-lime-400 rounded-full"></div>
