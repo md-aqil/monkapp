@@ -7,7 +7,7 @@ import React from "react";
 
 const Hero= ({ heroImage }) => {
   return (
-    <section className="z-10 mt-20 container hero-sec overflow-hidden">
+    <section className="z-10 my-20 container hero-sec overflow-hidden ">
     <img src="./Gradient.png" className="absolute   w-[80%]" alt="" />
 
       <div className="flex gap-5 max-md:flex-col max-md:gap-0">
@@ -39,13 +39,20 @@ promising projects.
             
           </div>
         </div>
-        <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-          <img
+        <div className="flex flex-col ml-20 w-6/12 max-md:ml-0 max-md:w-full">
+
+        <video className="w-full rounded-lg" autoPlay loop muted>
+          <source src="./nft.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+
+          {/* <img
             loading="lazy"
             src={heroImage}
             alt="Hero illustration"
             className="grow mt-14 w-full aspect-[1.69] max-md:mt-10 max-md:max-w-full"
-          />
+          /> */}
         </div>
       </div>
     </section>
