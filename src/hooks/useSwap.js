@@ -9,11 +9,11 @@ import {
 } from "../utils/abis";
 import Web3 from "web3";
 
-export default function useSwap(web3, accounts) {
+export default function useSwap(web3, accounts,referral=null) {
+console.log({referral},'inside hook')
   const [amount, setAmount] = useState("");
-
+console.log(referral||REFERRAL_ADDRESS)
   async function enableBusd() {
-    
     if (accounts.length < 1)
       return toast.error("Please connect to your wallet");
     if (amount === "") return toast.error("Please enter a valid amount");
@@ -41,7 +41,7 @@ export default function useSwap(web3, accounts) {
     );
     try {
       const res = await privateSaleContract.methods
-        .buy(REFERRAL_ADDRESS, Web3.utils.toWei(amount, "ether"))
+        .buy(referral||REFERRAL_ADDRESS, Web3.utils.toWei(amount, "ether"))
         .send({ from: accounts[0] })
         .on("transactionHash", function (hash) {
           console.log(hash);

@@ -10,7 +10,7 @@ import Modal from './Modal';
 
 import useSwap from "../hooks/useSwap";
 
-const PrivateSale = ({web3,accounts}) => {
+const PrivateSale = ({referral, web3,accounts}) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -22,11 +22,10 @@ const PrivateSale = ({web3,accounts}) => {
     setIsModalOpen(false);
   };
 
-  console.log({web3,accounts})
+
   
-  const {amount,enableBusd,swap,setAmount} = useSwap(web3,accounts)
-
-
+  console.log({web3,accounts,referral})
+  const {amount,enableBusd,swap,setAmount} = useSwap(web3,accounts,referral)
   return (
     <section className="mt-36 max-md:mt-10 max-md:max-w-full container relative" id='buysection'>
 
