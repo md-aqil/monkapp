@@ -72,10 +72,10 @@ const features: TokenFeature[] = [
 const Features: React.FC = () => {
   return (
     <section className="flex flex-col justify-center items-center max-md:px-5 container">
-      <h2 className="mr-auto heading text-4xl tracking-tighter text-left text-white leading-[67px] max-md:max-w-full">
+      <h2 className="mr-auto heading text-4xl tracking-tighter text-left text-white ">
         Beyond just a <span className="text-lime-300">token</span>
       </h2>
-      <div className="justify-center mt-10 w-full max-w-full max-md:pr-5">
+      <div className="justify-center mt-5 w-full max-w-full max-md:pr-5">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           {features.map((feature, index) => (
             <FeatureCard

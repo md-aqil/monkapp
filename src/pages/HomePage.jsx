@@ -27,9 +27,11 @@ export default function HomePage(){
 <InfoSection />
 
 <section className="flex justify-center items-center px-16 py-20 bg-neutral-900 max-md:px-5">
+<img src="./Gradient.png" className="absolute light" alt="" />
+
   <div className="flex flex-col px-1.5 pt-2 mt-5 max-w-full w-[694px]">
 
-    <h2 className="self-center text-6xl tracking-tighter text-center text-white leading-[67.2px] max-md:text-4xl">
+    <h2 className="heading tracking-tighter text-center text-white leading-[67.2px] ">
       Tokenomics
     </h2>
 
@@ -109,7 +111,7 @@ export default function HomePage(){
 
 
 <section className="flex flex-col justify-center items-center p-20 bg-neutral-900 max-md:px-5">
-  <h2 className="mt-5 text-6xl tracking-tighter text-center text-lime-300 leading-[67.2px] max-md:max-w-full max-md:text-4xl max-md:leading-[54px]">
+  <h2 className=" tracking-tighter text-center text-white leading-[67.2px] max-md:max-w-full heading">
     Shortlisted <span className="text-lime-300">NFTs</span>
   </h2>
   <div className="flex gap-5 justify-between px-px mt-12 max-md:flex-wrap max-md:mt-10">

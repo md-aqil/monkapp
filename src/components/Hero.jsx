@@ -7,7 +7,9 @@ import React from "react";
 
 const Hero= ({ heroImage }) => {
   return (
-    <section className="z-10 mt-20 container hero-sec">
+    <section className="z-10 mt-20 container hero-sec overflow-hidden">
+    <img src="./Gradient.png" className="absolute   w-[80%]" alt="" />
+
       <div className="flex gap-5 max-md:flex-col max-md:gap-0">
         <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
 

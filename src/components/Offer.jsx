@@ -41,10 +41,10 @@ const Offer = () => {
               <p>Enjoy all the sight seeings & Cruise Ride</p>
             </li>
           </ul>
-          <button className="flex gap-2 justify-center px-9 py-2.5 mt-7 text-base text-right bg-white rounded text-neutral-900 max-md:px-5">
+          <a href="#buysection" className="flex gap-2 justify-center px-9 py-2.5 mt-7 text-base text-right bg-white rounded text-neutral-900 max-md:px-5">
             <span>Buy BMONK</span>
             <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c2f7b743fc595fae685a89fb6dd18b1000578516a36565de05394387ac483cef?apiKey=b4d1b9e87b084579b1e2475047caf617&" className="shrink-0 my-auto aspect-square  w-[13px]" alt="" />
-          </button>
+          </a>
         </div>
       </div>
 

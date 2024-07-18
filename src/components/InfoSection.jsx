@@ -9,15 +9,15 @@ const InfoSection = () => {
   return (
    <>
    <section className="flex flex-col items-center p-20 bg-neutral-900 max-md:px-5 info-section">
-  <h1 className="text-6xl tracking-tighter heading text-center text-white">
-    Cultivationg Profitable <br /> <span className="text-lime-300">Web3 Venture</span>
+  <h1 className="heading text-center text-white">
+    Cultivating Profitable <br /> <span className="text-lime-300">Web3 Venture</span>
   </h1>
-
+    <img src="./Gradient.png" className="absolute" alt="" />
   <div className="justify-center px-20 py-6 mt-5 w-full  max-md:px-5 container max-md:mt-10 max-md:max-w-full">
     <div className="flex gap-5 max-md:flex-col max-md:gap-0">
       <div className="flex flex-col w-3/5 max-md:ml-0 max-md:w-full">
         <article className="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
-          <h2 className="text-5xl font-semibold tracking-tighter text-white leading-[61.88px] max-md:max-w-full max-md:text-4xl">
+          <h2 className="heading text-white">
             NFT IP Studio
           </h2>
           <hr className="shrink-0 mt-6 h-px border border-solid bg-zinc-300 bg-opacity-50 border-zinc-300 border-opacity-50 max-md:max-w-full" />
@@ -43,7 +43,7 @@ const InfoSection = () => {
       </div>
       <div className="flex flex-col ml-5 w-[59%] max-md:ml-0 max-md:w-full">
         <article className="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
-          <h2 className="text-5xl font-semibold tracking-tighter text-white leading-[61.88px] max-md:max-w-full max-md:text-4xl">
+          <h2 className="heading text-white">
             RWA
           </h2>
           <hr className="shrink-0 mt-6 h-px border border-solid bg-zinc-300 bg-opacity-50 border-zinc-300 border-opacity-50 max-md:max-w-full" />
@@ -58,7 +58,7 @@ const InfoSection = () => {
     <div className="flex gap-5 max-md:flex-col max-md:gap-0">
       <div className="flex flex-col w-3/5 max-md:ml-0 max-md:w-full">
         <article className="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
-          <h2 className="text-5xl font-semibold tracking-tighter text-white leading-[61.88px] max-md:max-w-full max-md:text-4xl">
+          <h2 className="heading text-white">
             Liquidity Provider
           </h2>
           <hr className="shrink-0 mt-6 h-px border border-solid bg-zinc-300 bg-opacity-50 border-zinc-300 border-opacity-50 max-md:max-w-full" />
@@ -69,7 +69,7 @@ const InfoSection = () => {
       </div>
       <div className="flex flex-col ml-5 w-2/5 max-md:ml-0 max-md:w-full">
         <figure className="flex flex-col grow justify-center rounded-md max-md:mt-10">
-          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/dc373c1cc118b62fbe0dfc6c7e45e64e1f33c6a597f563a3074862f1169e75a4?apiKey=b4d1b9e87b084579b1e2475047caf617&" className="w-full aspect-[1.19]" alt="Liquidity Provider illustration" />
+          <img loading="lazy" src="./a-joyous-child.jpeg" className="w-full aspect-[1.19] object-cover" alt="Liquidity Provider illustration" />
         </figure>
       </div>
     </div>
@@ -78,12 +78,12 @@ const InfoSection = () => {
     <div className="flex gap-5 max-md:flex-col max-md:gap-0 m-reverse">
       <div className="flex flex-col w-[41%] max-md:ml-0 max-md:w-full">
         <figure className="flex flex-col grow justify-center w-full bg-white rounded-md max-md:mt-10">
-          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3f6dd96ae5810e57ad68f33e3a7c0d59f70456800f26f005d3583c4ecce3e1ce?apiKey=b4d1b9e87b084579b1e2475047caf617&" className="w-full aspect-[1.19]" alt="Buying Projects illustration" />
+          <img loading="lazy" src="./meating.jpeg" className="w-full aspect-[1.19] object-cover" alt="Buying Projects illustration" />
         </figure>
       </div>
       <div className="flex flex-col ml-5 w-[59%] max-md:ml-0 max-md:w-full">
         <article className="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
-          <h2 className="text-5xl font-semibold tracking-tighter text-white leading-[61.88px] max-md:max-w-full max-md:text-4xl">
+          <h2 className="heading text-white">
             Buying Projects
           </h2>
           <hr className="shrink-0 mt-6 h-px border border-solid bg-zinc-300 bg-opacity-50 border-zinc-300 border-opacity-50 max-md:max-w-full" />
