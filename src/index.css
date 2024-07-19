@@ -61,5 +61,22 @@ code {
   }
   .hero-sec {
     margin-top:20px !important;
+  } 
+  .mobile-w-full {
+    width: 100% !important;
+  }
+
+  .fc-wrapper {
+    flex-direction: column;
+  }
+
+  .ft-abt {
+    border-bottom: 1px solid #ababab;
+    padding-bottom: 22px;
+    margin-bottom: 20px;
+  }
+
+  .nft-sec .justify-between{
+    justify-content: center !important;
   }
 }

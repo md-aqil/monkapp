@@ -22,13 +22,13 @@ const Offer = () => {
           </h2>
 
           <h1 className="self-stretch mt-2 text-5xl  heading text-lime-300 leading-[56px] max-md:max-w-full max-md:text-4xl max-md:leading-[55px]">
-            <span className="text-zinc-300">Buy BMONK Of $3000 And Get </span>
+            <span className="text-zinc-300">Buy BMONK Of $6000 And Get </span>
             <span className="text-lime-300">Free Goa Tour Package</span>
           </h1>
           <ul className="list-none pl-0">
             <li className="flex gap-4 mt-20 max-md:mt-10">
               <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d55a713a849c85972ef39824c1e9fec22cbbb69be57470443009f5810a3757ad?apiKey=b4d1b9e87b084579b1e2475047caf617&" className="shrink-0 aspect-square w-[30px]" alt="" />
-              <p>Goa 5D/6N Tour</p>
+              <p>Goa 4D/3N Tour</p>
             </li>
            
             <li className="flex gap-4 mt-7">

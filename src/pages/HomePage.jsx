@@ -22,7 +22,7 @@ export default function HomePage() {
 
       <section className="flex justify-center items-center px-16 py-20 bg-neutral-900 max-md:px-5">
         <div className="flex flex-col px-1.5 pt-2 mt-5 max-w-full w-[694px]">
-          <h2 className="self-center text-6xl tracking-tighter text-center text-white leading-[67.2px] max-md:text-4xl">
+          <h2 className="self-center text-6xl heading tracking-tighter text-center text-white leading-[67.2px] max-md:text-4xl">
             Tokenomics
           </h2>
 
@@ -89,23 +89,12 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          <a
-            href="#"
-            className="flex gap-2 justify-center self-end p-2 mt-6 text-sm text-white border-b border-white border-solid max-md:mr-2.5"
-          >
-            <span className="my-auto">Learn More</span>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3251f42dabc4a6917854414a7b5a68fc6f73eda3056ce306b4ffe31d5f266447?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-              className="shrink-0 w-6 aspect-square"
-              alt=""
-            />
-          </a>
+          
         </div>
       </section>
 
-      <section className="flex flex-col justify-center items-center p-20 bg-neutral-900 max-md:px-5">
-        <h2 className="mt-5 text-6xl tracking-tighter text-center text-lime-300 leading-[67.2px] max-md:max-w-full max-md:text-4xl max-md:leading-[54px]">
+      <section className="flex flex-col justify-center items-center p-20 bg-neutral-900 max-md:px-5 nft-sec">
+        <h2 className="mt-5 text-6xl tracking-tighter text-center text-white heading leading-[67.2px] max-md:max-w-full max-md:text-4xl max-md:leading-[54px]">
           Shortlisted <span className="text-lime-300">NFTs</span>
         </h2>
         <div className="flex gap-5 justify-between px-px mt-12 max-md:flex-wrap max-md:mt-10">
@@ -221,12 +210,13 @@ export default function HomePage() {
       </section>
 
       <section className="flex justify-center items-center px-16 py-20 bg-neutral-900 max-md:px-5">
-        <div className="flex gap-5 justify-between items-start px-px py-1.5 mt-5 w-full max-w-[1236px] max-md:flex-wrap max-md:max-w-full">
-          <article className="flex flex-col self-stretch w-[40%]">
+        <div className="flex gap-5 justify-between items-start px-px py-1.5 mt-5 w-full max-w-[1236px] max-md:flex-wrap max-md:max-w-full fc-wrapper">
+
+          <article className="flex flex-col self-stretch w-[40%] mobile-w-full ft-abt">
             <h2 className="text-base font-bold leading-6 text-white">
               About BMONK
             </h2>
-            <p className="mt-10 text-sm leading-6 text-stone-300 max-md:mt-10">
+            <p className="mt-4 text-sm leading-6 text-stone-300 max-md:mt-10">
               Explore the magic of Treasury backed DeFi, driving profitable Web3
               businesses like NFT IPs, RWA, Liquidity provider as node
               validators, and acquiring promising projects.
@@ -238,9 +228,10 @@ export default function HomePage() {
               alt="Rareblocks logo or related image"
             />
           </article>
+
           <nav className="flex flex-col text-white">
             <h3 className="text-base font-bold leading-6">Company</h3>
-            <ul className="mt-9 text-sm leading-10">
+            <ul className="mt-4 text-sm leading-10">
               <li>
                 <a href="#about">About</a>
               </li>
@@ -257,7 +248,7 @@ export default function HomePage() {
           </nav>
           <nav className="flex flex-col text-white">
             <h3 className="text-base font-bold leading-6">Help</h3>
-            <ul className="mt-10 text-sm leading-10">
+            <ul className="mt-4 text-sm leading-10">
               <li>
                 <a href="#support">Customer Support</a>
               </li>
@@ -271,7 +262,7 @@ export default function HomePage() {
           </nav>
           <nav className="flex flex-col text-white">
             <h3 className="text-base font-bold leading-6">Resources</h3>
-            <ul className="mt-10 text-sm leading-10 max-md:mt-10">
+            <ul className="mt-4 text-sm leading-10 max-md:mt-10">
               <li>
                 <a href="#blog">How to - Blog</a>
               </li>

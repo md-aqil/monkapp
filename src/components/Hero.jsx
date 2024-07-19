@@ -27,7 +27,7 @@ const Hero= ({ heroImage }) => {
 promising projects.
             </p>
 
-            <button className="flex gap-2 justify-center self-start px-9 py-2.5 mt-6 text-sm text-right bg-white rounded text-neutral-900 max-md:px-5">
+            <a href="#buysection" className="flex gap-2 justify-center self-start px-9 py-2.5 mt-6 text-sm text-right bg-white rounded text-neutral-900 max-md:px-5">
               <span className="my-auto">Buy BMONK</span>
               <img
                 loading="lazy"
@@ -35,7 +35,7 @@ promising projects.
                 alt=""
                 className="shrink-0 w-6 aspect-square"
               />
-            </button>
+            </a>
             
           </div>
         </div>
