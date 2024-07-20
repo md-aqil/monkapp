@@ -221,45 +221,27 @@ export default function HomePage() {
               businesses like NFT IPs, RWA, Liquidity provider as node
               validators, and acquiring promising projects.
             </p>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/957d3b459981acc29077012857db6b990730dd42ed38c456658b57602efd366a?apiKey=b4d1b9e87b084579b1e2475047caf617&"
-              className="mt-10 max-w-full aspect-[9.09] w-[166px] max-md:mt-10"
-              alt="Rareblocks logo or related image"
-            />
+            <ul className="flex gap-4 social-list mt-5">
+              <li>
+                <a href="">
+                  <img src="./twitter.png" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="./telegram.png" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="./youtube.png" alt="" />
+                </a>
+              </li>
+            </ul>
           </article>
 
-          <nav className="flex flex-col text-white">
-            <h3 className="text-base font-bold leading-6">Company</h3>
-            <ul className="mt-4 text-sm leading-10">
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#features">Features</a>
-              </li>
-              <li>
-                <a href="#works">Works</a>
-              </li>
-              <li>
-                <a href="#career">Career</a>
-              </li>
-            </ul>
-          </nav>
-          <nav className="flex flex-col text-white">
-            <h3 className="text-base font-bold leading-6">Help</h3>
-            <ul className="mt-4 text-sm leading-10">
-              <li>
-                <a href="#support">Customer Support</a>
-              </li>
-              <li>
-                <a href="#terms">Terms & Conditions</a>
-              </li>
-              <li>
-                <a href="#privacy">Privacy Policy</a>
-              </li>
-            </ul>
-          </nav>
+         
+         
           <nav className="flex flex-col text-white">
             <h3 className="text-base font-bold leading-6">Resources</h3>
             <ul className="mt-4 text-sm leading-10 max-md:mt-10">

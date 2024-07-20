@@ -33,6 +33,21 @@ code {
 .h-100 {
   height: 100% !important;
 }
+
+.social-list li {
+  width: 40px;
+}
+.social-list li img {
+  border-radius: 50%;
+  background: #fff;
+  padding: 1px;
+  opacity: .6;
+}
+
+.social-list li img:hover {
+
+  opacity: 1;
+}
 @media (max-width: 768px) {
   .heading {
     font-size: 40px !important;
