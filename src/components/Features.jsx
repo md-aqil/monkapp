@@ -87,6 +87,8 @@ const Features: React.FC = () => {
           ))}
         </div>
       </div>
+
+      <a href='https://blackmonk.gitbook.io/welcome/' class="mt-5 px-9 py-2 my-auto text-sm text-right bg-lime-400 rounded text-neutral-900  bold uppercase">Read Whitepaper</a>
     </section>
   );
 };
