@@ -8,6 +8,7 @@ import Features from "./Features";
 import InfoSection from "./InfoSection";
 import PrivateSale from "./PrivateSale";
 
+
 const MainContent: React.FC = () => {
   return (
     <main className="flex flex-col items-center pt-5 bg-neutral-900">
@@ -29,6 +30,8 @@ const MainContent: React.FC = () => {
 
        
         <PrivateSale />
+       
+
       </div>
     </main>
   );

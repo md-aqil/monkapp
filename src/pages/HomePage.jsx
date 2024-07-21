@@ -5,6 +5,7 @@ import Features from "../components/Features";
 import InfoSection from "../components/InfoSection";
 import PrivateSale from "../components/PrivateSale";
 import Offer from "../components/Offer";
+
 import useConnect from "../hooks/useConnect";
 
 export default function HomePage() {
@@ -16,6 +17,8 @@ export default function HomePage() {
       <Hero heroImage="https://cdn.builder.io/api/v1/image/assets/TEMP/3573e3280f49cc7f49d59579f22a5afd8e8594c131efc2c0f8782d6613aaf81a?apiKey=b4d1b9e87b084579b1e2475047caf617&" />
       <Features />
       <PrivateSale  referral={params.current.get('start')} web3={web3} accounts={accounts} />
+
+      
       <Offer />
 
       <InfoSection />

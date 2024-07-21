@@ -1,11 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 import useSwap from "../hooks/useSwap";
+import InviteLinkGenerator from './InviteLinkGenerator'; // import the new component
+
 
 const PrivateSale = ({ referral, web3, accounts }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCongratsModalOpen, setIsCongratsModalOpen] = useState(false);
   const [isUsdtEnabled, setIsUsdtEnabled] = useState(false);
   const [calculatedAmount, setCalculatedAmount] = useState(0);
+  const [bmonkBalance, setBmonkBalance] = useState(0);
+  const [currentPhaseRate, setCurrentPhaseRate] = useState(0.6); // default phase 1 rate
+  const [currentBmonkValue, setCurrentBmonkValue] = useState(0);
+
+  useEffect(() => {
+
+    // Fetch BMONK balance and current phase rate
+    
+    const fetchBmonkBalance = async () => {
+      const balance = await getBmonkBalance(accounts[0]);
+      setBmonkBalance(balance);
+
+      const currentRate = await getCurrentPhaseRate();
+      setCurrentPhaseRate(currentRate);
+
+      setCurrentBmonkValue(balance * currentRate);
+    };
+
+    if (accounts.length) {
+      fetchBmonkBalance();
+    }
+  }, [accounts]);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -15,13 +40,17 @@ const PrivateSale = ({ referral, web3, accounts }) => {
     setIsModalOpen(false);
   };
 
+  const closeCongratsModal = () => {
+    setIsCongratsModalOpen(false);
+  };
+
   const { amount, enableBusd, swap, setAmount } = useSwap(web3, accounts, referral);
 
   const handleAmountChange = (e) => {
     const usdtAmount = e.target.value;
     setAmount(usdtAmount);
-    const bmonkAmount = usdtAmount / 0.6;
-    setCalculatedAmount(bmonkAmount);
+    const bmonkAmount = usdtAmount / currentPhaseRate;
+    setCalculatedAmount(bmonkAmount.toFixed(2));
   };
 
   const handleEnableUsdt = () => {
@@ -29,8 +58,13 @@ const PrivateSale = ({ referral, web3, accounts }) => {
     setIsUsdtEnabled(true);
   };
 
+  const handleSwap = async () => {
+    await swap();
+    setIsCongratsModalOpen(true);
+  };
+
   return (
-    <section className="mt-36 max-md:mt-10 max-md:max-w-full container relative" id='buysection'>
+    <section className="my-28 max-md:mt-10 max-md:max-w-full container relative" id='buysection'>
       <h2 className="text-5xl text-center text-white heading mb-5">
         Participate In The BMONK Token <br />
         <span className="text-lime-300">Private Sale</span>
@@ -71,7 +105,7 @@ const PrivateSale = ({ referral, web3, accounts }) => {
                 </button>
 
                 <button
-                  onClick={swap}
+                  onClick={handleSwap}
                   type="button"
                   className={`flex-1 justify-center px-10 py-3.5 whitespace-nowrap rounded border border-solid shadow-sm max-md:px-5 ${
                     isUsdtEnabled ? 'bg-lime-300 text-black border-black' : 'bg-white text-black border-black'
@@ -87,10 +121,17 @@ const PrivateSale = ({ referral, web3, accounts }) => {
               </div>
 
               {!accounts.length && (
-                <p className="mt-3 text-xs leading-4 text-stone-300 max-md:max-w-full">
+                <p className="mt-3 text-xs leading-4 text-red-600 max-md:max-w-full">
                   *Web3 wallet not connected. Open this site in Trust <br />{" "}
                   wallet or Metamask dApp browser.
                 </p>
+              )}
+
+              {accounts.length && (
+                <div className="mt-6 text-white">
+                  <p>Available BMONK tokens in your wallet: {bmonkBalance}</p>
+                  <p>Current value of BMONK token balance: ${currentBmonkValue.toFixed(2)}</p>
+                </div>
               )}
             </form>
           </div>
@@ -99,7 +140,12 @@ const PrivateSale = ({ referral, web3, accounts }) => {
             <div className="flex overflow-hidden relative flex-col grow items-start px-12 pt-5 max-md:px-5 max-md:max-w-full">
               <div className="flex relative flex-col justify-center items-start mt-2 max-w-full text-base leading-7 text-neutral-200">
                 <ul>
+               
                   <li className="flex gap-2.5">
+                    <div className="shrink-0 my-auto w-3 h-3 bg-lime-400 rounded-full"></div>
+                    <span>Keep sufficient BNB coin (BEP20) in wallet for transaction fees.</span>
+                  </li>
+                  <li className="flex gap-2.5  mt-6">
                     <div className="shrink-0 my-auto w-3 h-3 bg-lime-400 rounded-full"></div>
                     <span>No minimum condition….</span>
                   </li>
@@ -150,12 +196,31 @@ const PrivateSale = ({ referral, web3, accounts }) => {
                   </ul>
                 </div>
               </Modal>
+
+              <Modal isOpen={isCongratsModalOpen} onClose={closeCongratsModal} title="Congratulations!">
+                <div className="bg-white rounded-lg shadow-lg p-6 max-w-lg mx-auto">
+                  <p className="text-center text-lg text-green-600">Congratulations! You have successfully purchased BMONK tokens.</p>
+                </div>
+              </Modal>
             </div>
           </div>
         </div>
       </div>
+
+<h1>invite link</h1>
+<InviteLinkGenerator />
     </section>
   );
 };
 
 export default PrivateSale;
+
+async function getBmonkBalance(account) {
+  // Mock function to get BMONK balance; replace with actual web3 call
+  return 1000; // return dummy balance
+}
+
+async function getCurrentPhaseRate() {
+  // Mock function to get current phase rate; replace with actual logic
+  return 0.6; // return dummy phase rate
+}
