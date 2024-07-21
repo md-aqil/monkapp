@@ -21,7 +21,7 @@ const InviteLinkGenerator = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto my-10 p-5 rounded-lg shadow-md">
+    <div className="max-w-xl mx-auto my-20 p-5 rounded-lg shadow-md">
       <h2 className=" text-center text-white mb-5 heading">Generate Invite Link</h2>
       <div className="mb-4">
         <label className="block text-white text-sm font-bold mb-2" htmlFor="usdtAddress">

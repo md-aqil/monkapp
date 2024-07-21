@@ -207,7 +207,6 @@ const PrivateSale = ({ referral, web3, accounts }) => {
         </div>
       </div>
 
-<h1>invite link</h1>
 <InviteLinkGenerator />
     </section>
   );
