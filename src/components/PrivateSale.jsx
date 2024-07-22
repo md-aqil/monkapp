@@ -4,7 +4,7 @@ import useSwap from "../hooks/useSwap";
 import InviteLinkGenerator from './InviteLinkGenerator'; // import the new component
 
 
-const PrivateSale = ({ referral, web3, accounts }) => {
+const PrivateSale = ({ referral, web3, accounts,balance }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCongratsModalOpen, setIsCongratsModalOpen] = useState(false);
   const [isUsdtEnabled, setIsUsdtEnabled] = useState(false);
@@ -12,25 +12,22 @@ const PrivateSale = ({ referral, web3, accounts }) => {
   const [bmonkBalance, setBmonkBalance] = useState(0);
   const [currentPhaseRate, setCurrentPhaseRate] = useState(0.6); // default phase 1 rate
   const [currentBmonkValue, setCurrentBmonkValue] = useState(0);
+  
+  // useEffect(() => {
 
-  useEffect(() => {
-
-    // Fetch BMONK balance and current phase rate
+  //   // Fetch BMONK balance and current phase rate
     
-    const fetchBmonkBalance = async () => {
-      const balance = await getBmonkBalance(accounts[0]);
-      setBmonkBalance(balance);
+  //   const fetchBmonkBalance = async () => {
+  //     console.log("balance",privateSale.methods)
+  //     const balance = await privateSale?.methods?.balanceOf(accounts[0]).call()
+  //     setBmonkBalance(balance)
+  //   };
 
-      const currentRate = await getCurrentPhaseRate();
-      setCurrentPhaseRate(currentRate);
-
-      setCurrentBmonkValue(balance * currentRate);
-    };
-
-    if (accounts.length) {
-      fetchBmonkBalance();
-    }
-  }, [accounts]);
+  //   if (accounts.length) {
+  //     fetchBmonkBalance();
+  //   }
+  // }, [accounts]);
+  
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -44,7 +41,7 @@ const PrivateSale = ({ referral, web3, accounts }) => {
     setIsCongratsModalOpen(false);
   };
 
-  const { amount, enableBusd, swap, setAmount } = useSwap(web3, accounts, referral);
+  const {  enableBusd, swap, setAmount } = useSwap(web3, accounts, referral);
 
   const handleAmountChange = (e) => {
     const usdtAmount = e.target.value;
@@ -129,7 +126,7 @@ const PrivateSale = ({ referral, web3, accounts }) => {
 
               {accounts.length && (
                 <div className="mt-6 text-white">
-                  <p>Available BMONK tokens in your wallet: {bmonkBalance}</p>
+                  <p>Available BMONK tokens in your wallet: {(+balance).toFixed(4)}</p>
                   <p>Current value of BMONK token balance: ${currentBmonkValue.toFixed(2)}</p>
                 </div>
               )}

@@ -3,11 +3,13 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Web3 from "web3";
 
+
+
 export default function useConnect() {
   const [provider, setProvider] = useState(null);
   const [web3, setWeb3] = useState(null);
   const [accounts, setAccounts] = useState([]);
-
+  const [balance,setBalance] = useState(0)
   async function initWeb3() {
     const ethereumProvider = await detectEthereumProvider();
     if (!ethereumProvider) return toast.error("Please install MetaMask!");
@@ -43,11 +45,14 @@ export default function useConnect() {
 
   async function connect() {
     const accounts = await provider.request({ method: "eth_requestAccounts" });
+    const bal = await web3.eth.getBalance(accounts[0])
+    const balance = web3.utils.fromWei(bal, 'ether');
+    setBalance(balance)
     setAccounts(accounts);
   }
 
   useEffect(() => {
     initWeb3();
   }, []);
-  return { connect, web3, accounts };
+  return { connect, web3, accounts,balance };
 }

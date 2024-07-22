@@ -10,9 +10,7 @@ import {
 import Web3 from "web3";
 
 export default function useSwap(web3, accounts,referral=null) {
-console.log({referral},'inside hook')
   const [amount, setAmount] = useState("");
-console.log(referral||REFERRAL_ADDRESS)
   async function enableBusd() {
     if (accounts.length < 1)
       return toast.error("Please connect to your wallet");
