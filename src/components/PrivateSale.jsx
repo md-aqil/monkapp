@@ -4,8 +4,7 @@ import useSwap from "../hooks/useSwap";
 import InviteLinkGenerator from './InviteLinkGenerator'; // import the new component
 import { toast } from 'react-toastify';
 
-
-const PrivateSale = ({ referral, web3, accounts,balance }) => {
+const PrivateSale = ({ referral, web3, accounts, balance }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCongratsModalOpen, setIsCongratsModalOpen] = useState(false);
   const [isUsdtEnabled, setIsUsdtEnabled] = useState(false);
@@ -13,23 +12,7 @@ const PrivateSale = ({ referral, web3, accounts,balance }) => {
   const [bmonkBalance, setBmonkBalance] = useState(0);
   const [currentPhaseRate, setCurrentPhaseRate] = useState(0.6); // default phase 1 rate
   const [currentBmonkValue, setCurrentBmonkValue] = useState(0);
-  const {  enableBusd, swap, setAmount } = useSwap(web3, accounts, referral);
-  
-  // useEffect(() => {
-
-  //   // Fetch BMONK balance and current phase rate
-    
-  //   const fetchBmonkBalance = async () => {
-  //     console.log("balance",privateSale.methods)
-  //     const balance = await privateSale?.methods?.balanceOf(accounts[0]).call()
-  //     setBmonkBalance(balance)
-  //   };
-
-  //   if (accounts.length) {
-  //     fetchBmonkBalance();
-  //   }
-  // }, [accounts]);
-  
+  const { enableBusd, swap, setAmount } = useSwap(web3, accounts, referral);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -42,7 +25,6 @@ const PrivateSale = ({ referral, web3, accounts,balance }) => {
   const closeCongratsModal = () => {
     setIsCongratsModalOpen(false);
   };
-
 
   const handleAmountChange = (e) => {
     const usdtAmount = e.target.value;
@@ -57,13 +39,12 @@ const PrivateSale = ({ referral, web3, accounts,balance }) => {
   };
 
   const handleSwap = async () => {
-    try{
-    await swap();    
-    setIsCongratsModalOpen(true);
-    }catch(e){
+    try {
+      await swap();
+      setIsCongratsModalOpen(true);
+    } catch (e) {
       toast.error(e.message);
     }
-
   };
 
   return (
@@ -143,7 +124,6 @@ const PrivateSale = ({ referral, web3, accounts,balance }) => {
             <div className="flex overflow-hidden relative flex-col grow items-start px-12 pt-5 max-md:px-5 max-md:max-w-full">
               <div className="flex relative flex-col justify-center items-start mt-2 max-w-full text-base leading-7 text-neutral-200">
                 <ul>
-               
                   <li className="flex gap-2.5">
                     <div className="shrink-0 my-auto w-3 h-3 bg-lime-400 rounded-full"></div>
                     <span>Keep sufficient BNB coin (BEP20) in wallet for transaction fees.</span>
@@ -210,19 +190,9 @@ const PrivateSale = ({ referral, web3, accounts,balance }) => {
         </div>
       </div>
 
-<InviteLinkGenerator />
+      <InviteLinkGenerator balance={bmonkBalance} />
     </section>
   );
 };
 
 export default PrivateSale;
-
-async function getBmonkBalance(account) {
-  // Mock function to get BMONK balance; replace with actual web3 call
-  return 1000; // return dummy balance
-}
-
-async function getCurrentPhaseRate() {
-  // Mock function to get current phase rate; replace with actual logic
-  return 0.6; // return dummy phase rate
-}

@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
 
-const InviteLinkGenerator = () => {
+const InviteLinkGenerator = ({ balance }) => {
   const [usdtAddress, setUsdtAddress] = useState('');
   const [inviteLink, setInviteLink] = useState('');
   const [isLinkGenerated, setIsLinkGenerated] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
     setUsdtAddress(e.target.value);
   };
 
   const handleGenerateLink = () => {
+    if (balance < 60) {
+      setErrorMessage('You need a minimum of 60 BMONK tokens to generate an invite link.');
+      return;
+    }
     const link = `http://www.blackmonk.io/referral?start=${usdtAddress}`;
     setInviteLink(link);
     setIsLinkGenerated(true);
+    setErrorMessage(''); // Clear any previous error message
   };
 
   const handleCopyLink = () => {
@@ -22,7 +28,7 @@ const InviteLinkGenerator = () => {
 
   return (
     <div className="max-w-xl mx-auto my-20 p-5 rounded-lg shadow-md">
-      <h2 className=" text-center text-white mb-5 heading">Generate Invite Link</h2>
+      <h2 className="text-center text-white mb-5 heading">Generate Invite Link</h2>
       <div className="mb-4">
         <label className="block text-white text-sm font-bold mb-2" htmlFor="usdtAddress">
           Enter USDT Address
@@ -57,6 +63,11 @@ const InviteLinkGenerator = () => {
       {inviteLink && (
         <div className="mt-4 bg-gray-900 text-white p-3 rounded-lg break-all">
           {inviteLink}
+        </div>
+      )}
+      {errorMessage && (
+        <div className="mt-4 text-red-500">
+          {errorMessage}
         </div>
       )}
     </div>
