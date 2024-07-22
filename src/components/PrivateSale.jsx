@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 import useSwap from "../hooks/useSwap";
 import InviteLinkGenerator from './InviteLinkGenerator'; // import the new component
+import { toast } from 'react-toastify';
 
 
 const PrivateSale = ({ referral, web3, accounts,balance }) => {
@@ -12,6 +13,7 @@ const PrivateSale = ({ referral, web3, accounts,balance }) => {
   const [bmonkBalance, setBmonkBalance] = useState(0);
   const [currentPhaseRate, setCurrentPhaseRate] = useState(0.6); // default phase 1 rate
   const [currentBmonkValue, setCurrentBmonkValue] = useState(0);
+  const {  enableBusd, swap, setAmount } = useSwap(web3, accounts, referral);
   
   // useEffect(() => {
 
@@ -41,7 +43,6 @@ const PrivateSale = ({ referral, web3, accounts,balance }) => {
     setIsCongratsModalOpen(false);
   };
 
-  const {  enableBusd, swap, setAmount } = useSwap(web3, accounts, referral);
 
   const handleAmountChange = (e) => {
     const usdtAmount = e.target.value;
@@ -56,8 +57,13 @@ const PrivateSale = ({ referral, web3, accounts,balance }) => {
   };
 
   const handleSwap = async () => {
-    await swap();
+    try{
+    await swap();    
     setIsCongratsModalOpen(true);
+    }catch(e){
+      toast.error(e.message);
+    }
+
   };
 
   return (

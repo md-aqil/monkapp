@@ -37,20 +37,14 @@ export default function useSwap(web3, accounts,referral=null) {
       getPrivateSaleABI(),
       getPrivateSaleToken()
     );
-    try {
-      const res = await privateSaleContract.methods
+    return  privateSaleContract.methods
         .buy(referral||REFERRAL_ADDRESS, Web3.utils.toWei(amount, "ether"))
         .send({ from: accounts[0] })
         .on("transactionHash", function (hash) {
           console.log(hash);
           // Handle transaction hash
         });
-      toast.success("Transaction Successfull");
-      // Show success modal
-    } catch (e) {
-      toast.error(e.message);
-      // Handle error
-    }
+   
   }
   return { amount, enableBusd, swap, setAmount };
 }
