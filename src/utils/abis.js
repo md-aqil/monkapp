@@ -690,12 +690,8 @@ export const BUSD_ABI = [
 ];
 
 export const BUSD_ADDRESS = "0x63f1E5fCEd1555a203D6397cE34f0FA7EB6a8528";
-<<<<<<< HEAD
-export const PRIVATE_SALE_ADDRESS = "0x6DA888833597d236386Ba5d519250Ecd5eF82040";
-=======
 export const PRIVATE_SALE_ADDRESS =
   "0x5D1b0C6Ff4AF1EBE7035B8e2fAd7687114604525";
->>>>>>> 6981e0ef1dbffb9083583df4ece2e978a20ab7f8
 export const REFERRAL_ADDRESS = "0x0000000000000000000000000000000000000000";
 export const TEST_CHAIN_ID = 97;
 export const MAIN_CHAIN_ID = 56;
@@ -833,7 +829,7 @@ export const getPrivateSaleABI = (chainId = "") => {
 
 export const getPrivateSaleToken = (chainId = "") => {
   // return '0x0227587AC1E0A153e4B71aD81f398CC31e8B2a7e'
-  return "0x6DA888833597d236386Ba5d519250Ecd5eF82040";
+  return "0xD546d2c43363C1299b136D7b0bdC7C0c685c388b";
   // if(chainId==MAIN_CHAIN_ID) return PRIVATE_SALE_ADDRESS
   return PRIVATE_SALE_ADDRESS_TEST;
 };
