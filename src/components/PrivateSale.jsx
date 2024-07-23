@@ -9,7 +9,6 @@ const PrivateSale = ({ referral, web3, accounts, balance }) => {
   const [isCongratsModalOpen, setIsCongratsModalOpen] = useState(false);
   const [isUsdtEnabled, setIsUsdtEnabled] = useState(false);
   const [calculatedAmount, setCalculatedAmount] = useState(0);
-  const [bmonkBalance, setBmonkBalance] = useState(0);
   const [currentPhaseRate, setCurrentPhaseRate] = useState(0.6); // default phase 1 rate
   const [currentBmonkValue, setCurrentBmonkValue] = useState(0);
   const { enableBusd, swap, setAmount } = useSwap(web3, accounts, referral);
@@ -190,7 +189,7 @@ const PrivateSale = ({ referral, web3, accounts, balance }) => {
         </div>
       </div>
 
-      <InviteLinkGenerator balance={bmonkBalance} />
+      <InviteLinkGenerator balance={balance} />
     </section>
   );
 };
