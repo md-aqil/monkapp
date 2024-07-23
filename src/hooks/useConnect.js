@@ -2,7 +2,7 @@ import detectEthereumProvider from "@metamask/detect-provider";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Web3 from "web3";
-import { getPrivateSaleABI, getPrivateSaleToken } from "../utils/abis";
+import { CONTRACT_ABI, CONTRACT_ADDRESS, getPrivateSaleABI, getPrivateSaleToken } from "../utils/abis";
 
 
 
@@ -48,18 +48,18 @@ export default function useConnect() {
     const accounts = await provider.request({ method: "eth_requestAccounts" });
     // const bal = await web3.eth.getBalance(accounts[0])
     // const balance = web3.utils.fromWei(bal, 'ether');
-      const privateSaleContract = new web3.eth.Contract(
-        getPrivateSaleABI(),
-        getPrivateSaleToken()
+      const contract = new web3.eth.Contract(
+        CONTRACT_ABI,
+        CONTRACT_ADDRESS
       );
       try{
-        const balance = await privateSaleContract.methods.balanceOf(accounts[0]).call()
-        console.log({balance})
+        console.log({accounts})
+        const balance = await contract.methods.balanceOf(accounts[0]).call()
+        
+        console.log({balance:web3.utils.fromWei(balance, 'ether')})
       }catch(e){
         console.log({e})
       }
-      console.log({balance})
-    setBalance(balance)
     setAccounts(accounts);
   }
 
