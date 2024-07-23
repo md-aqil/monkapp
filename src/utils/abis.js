@@ -833,3 +833,4 @@ export const getPrivateSaleToken = (chainId = "") => {
   // if(chainId==MAIN_CHAIN_ID) return PRIVATE_SALE_ADDRESS
   return PRIVATE_SALE_ADDRESS_TEST;
 };
+
