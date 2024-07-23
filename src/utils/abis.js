@@ -1,49 +1,31 @@
 const TOKEN_ABI = [
   {
     inputs: [
-      { internalType: "string", name: "name", type: "string" },
-      { internalType: "string", name: "symbol", type: "string" },
+      { internalType: "address", name: "_tokenAddress", type: "address" },
+      { internalType: "address", name: "_usdtAddress", type: "address" },
     ],
     stateMutability: "nonpayable",
     type: "constructor",
   },
   {
+    anonymous: false,
     inputs: [
-      { internalType: "address", name: "spender", type: "address" },
-      { internalType: "uint256", name: "allowance", type: "uint256" },
-      { internalType: "uint256", name: "needed", type: "uint256" },
+      { indexed: true, internalType: "address", name: "user", type: "address" },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "amount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "tokenPurchased",
+        type: "uint256",
+      },
     ],
-    name: "ERC20InsufficientAllowance",
-    type: "error",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "sender", type: "address" },
-      { internalType: "uint256", name: "balance", type: "uint256" },
-      { internalType: "uint256", name: "needed", type: "uint256" },
-    ],
-    name: "ERC20InsufficientBalance",
-    type: "error",
-  },
-  {
-    inputs: [{ internalType: "address", name: "approver", type: "address" }],
-    name: "ERC20InvalidApprover",
-    type: "error",
-  },
-  {
-    inputs: [{ internalType: "address", name: "receiver", type: "address" }],
-    name: "ERC20InvalidReceiver",
-    type: "error",
-  },
-  {
-    inputs: [{ internalType: "address", name: "sender", type: "address" }],
-    name: "ERC20InvalidSender",
-    type: "error",
-  },
-  {
-    inputs: [{ internalType: "address", name: "spender", type: "address" }],
-    name: "ERC20InvalidSpender",
-    type: "error",
+    name: "Bought",
+    type: "event",
   },
   {
     anonymous: false,
@@ -51,150 +33,126 @@ const TOKEN_ABI = [
       {
         indexed: true,
         internalType: "address",
-        name: "owner",
+        name: "referrer",
         type: "address",
       },
       {
-        indexed: true,
+        indexed: false,
         internalType: "address",
-        name: "spender",
+        name: "referee",
         type: "address",
       },
       {
         indexed: false,
         internalType: "uint256",
-        name: "value",
+        name: "amount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "tokenPurchased",
         type: "uint256",
       },
     ],
-    name: "Approval",
+    name: "ReferralReward",
     type: "event",
   },
   {
-    anonymous: false,
     inputs: [
-      { indexed: true, internalType: "address", name: "from", type: "address" },
-      { indexed: true, internalType: "address", name: "to", type: "address" },
       {
-        indexed: false,
         internalType: "uint256",
-        name: "value",
+        name: "_otherAllocationPercentage",
         type: "uint256",
       },
+      {
+        internalType: "address",
+        name: "_otherAllocationWalletAddress",
+        type: "address",
+      },
     ],
-    name: "Transfer",
-    type: "event",
+    name: "addOtherAllocationPercentage",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "address", name: "_referrer", type: "address" },
+      { internalType: "uint256", name: "_amount", type: "uint256" },
+    ],
+    name: "buy",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
   },
   {
     inputs: [],
-    name: "_owner",
+    name: "minBalanceReferralReward",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "otherAllocationPercentage",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "otherAllocationWalletAddress",
     outputs: [{ internalType: "address", name: "", type: "address" }],
     stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [
-      { internalType: "address", name: "owner", type: "address" },
-      { internalType: "address", name: "spender", type: "address" },
-    ],
-    name: "allowance",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    inputs: [],
+    name: "owner",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
     stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [
-      { internalType: "address", name: "spender", type: "address" },
-      { internalType: "uint256", name: "value", type: "uint256" },
-    ],
-    name: "approve",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "account", type: "address" }],
-    name: "balanceOf",
+    inputs: [],
+    name: "raisedUsd",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [],
-    name: "contractTransferEnabled",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "decimals",
-    outputs: [{ internalType: "uint8", name: "", type: "uint8" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "enableContractTokenTransfer",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "name",
-    outputs: [{ internalType: "string", name: "", type: "string" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "symbol",
-    outputs: [{ internalType: "string", name: "", type: "string" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "totalSupply",
+    name: "rate",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [
-      { internalType: "address", name: "to", type: "address" },
-      { internalType: "uint256", name: "value", type: "uint256" },
-    ],
-    name: "transfer",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
-    stateMutability: "nonpayable",
+    inputs: [],
+    name: "referralPercentage",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [
-      { internalType: "address", name: "from", type: "address" },
-      { internalType: "address", name: "to", type: "address" },
-      { internalType: "uint256", name: "value", type: "uint256" },
-    ],
-    name: "transferFrom",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
-    stateMutability: "nonpayable",
+    inputs: [],
+    name: "soldTokens",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [
-      { internalType: "address[]", name: "addresses", type: "address[]" },
-    ],
-    name: "whitelistContractAddress",
-    outputs: [],
-    stateMutability: "nonpayable",
+    inputs: [],
+    name: "tokenAddress",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
+    stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [{ internalType: "address", name: "", type: "address" }],
-    name: "whitelistedContractAddresses",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    inputs: [],
+    name: "usdtAddress",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
     stateMutability: "view",
     type: "function",
   },
@@ -732,7 +690,8 @@ export const BUSD_ABI = [
 ];
 
 export const BUSD_ADDRESS = "0x63f1E5fCEd1555a203D6397cE34f0FA7EB6a8528";
-export const PRIVATE_SALE_ADDRESS = "0x5D1b0C6Ff4AF1EBE7035B8e2fAd7687114604525";
+export const PRIVATE_SALE_ADDRESS =
+  "0x5D1b0C6Ff4AF1EBE7035B8e2fAd7687114604525";
 export const REFERRAL_ADDRESS = "0x0000000000000000000000000000000000000000";
 export const TEST_CHAIN_ID = 97;
 export const MAIN_CHAIN_ID = 56;
@@ -868,9 +827,9 @@ export const getPrivateSaleABI = (chainId = "") => {
   return TOKEN_ABI;
 };
 
- export const getPrivateSaleToken = (chainId='')=>{
-	// return '0x0227587AC1E0A153e4B71aD81f398CC31e8B2a7e'
-	return '0x5D1b0C6Ff4AF1EBE7035B8e2fAd7687114604525'
-	// if(chainId==MAIN_CHAIN_ID) return PRIVATE_SALE_ADDRESS
-	return PRIVATE_SALE_ADDRESS_TEST
-}
+export const getPrivateSaleToken = (chainId = "") => {
+  // return '0x0227587AC1E0A153e4B71aD81f398CC31e8B2a7e'
+  return "0x6DA888833597d236386Ba5d519250Ecd5eF82040";
+  // if(chainId==MAIN_CHAIN_ID) return PRIVATE_SALE_ADDRESS
+  return PRIVATE_SALE_ADDRESS_TEST;
+};

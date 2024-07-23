@@ -13,10 +13,6 @@ export default function useSwap(web3, accounts,referral=null) {
   const [amount, setAmount] = useState("");
   // const [contract,setContract] = useState(null)
   // const [balance,setBalance] = useState(0)
-  
-
-  
-
 
   async function enableBusd() {
     if (accounts.length < 1)
