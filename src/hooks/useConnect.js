@@ -54,7 +54,7 @@ export default function useConnect() {
       );
       try{
         console.log({accounts})
-        const balance = await contract.methods.balanceOf('0xb6069E6FaB7144e882B74862E6538A8a36B7362b').call()
+        const balance = await contract.methods.balanceOf(accounts[0]).call()
         setBalance(web3.utils.fromWei(balance, 'ether'))
       }catch(e){
         console.log({e})
