@@ -4,8 +4,6 @@ import { toast } from "react-toastify";
 import Web3 from "web3";
 import { CONTRACT_ABI, TOKEN_ADDRESS } from "../utils/token";
 
-
-
 export default function useConnect() {
   const [provider, setProvider] = useState(null);
   const [web3, setWeb3] = useState(null);
