@@ -2,9 +2,7 @@ import detectEthereumProvider from "@metamask/detect-provider";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Web3 from "web3";
-import { CONTRACT_ABI, CONTRACT_ADDRESS, getPrivateSaleABI, getPrivateSaleToken } from "../utils/abis";
-
-
+import { CONTRACT_ABI, TOKEN_ADDRESS } from "../utils/token";
 
 export default function useConnect() {
   const [provider, setProvider] = useState(null);
@@ -20,7 +18,7 @@ export default function useConnect() {
     try {
       await ethereumProvider.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0x61" }],
+        params: [{ chainId: "0x38" }],
       });
     } catch (switchError) {
       if (switchError.code === 4902) {
@@ -29,8 +27,8 @@ export default function useConnect() {
             method: "wallet_addEthereumChain",
             params: [
               {
-                chainId: "0x61",
-                chainName: "BSC Smart Chain Test net",
+                chainId: "0x38",
+                chainName: "BSC Smart Chain Main net",
                 rpcUrls: [
                   "https://data-seed-prebsc-1-s1.bnbchain.org:8545",
                 ],
@@ -50,7 +48,9 @@ export default function useConnect() {
     // const balance = web3.utils.fromWei(bal, 'ether');
       const contract = new web3.eth.Contract(
         CONTRACT_ABI,
-        CONTRACT_ADDRESS
+        TOKEN_ADDRESS
+        // CONTRACT_ABI,
+        // CONTRACT_ADDRESS
       );
       try{
         console.log({accounts})

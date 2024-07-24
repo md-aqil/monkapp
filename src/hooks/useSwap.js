@@ -1,13 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
-import {
-  BUSD_ABI,
-  BUSD_ADDRESS,
-  getPrivateSaleABI,
-  getPrivateSaleToken,
-  REFERRAL_ADDRESS,
-} from "../utils/abis";
+
 import Web3 from "web3";
+import { getPrivateSaleABI, getPrivateSaleToken, REFERRAL_ADDRESS } from "../utils";
+import { BUSD_ABI, BUSD_ADDRESS } from "../utils/busd";
 
 export default function useSwap(web3, accounts,referral=null) {
   const [amount, setAmount] = useState("");
