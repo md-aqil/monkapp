@@ -11,8 +11,8 @@ const InviteLinkGenerator = ({ balance }) => {
   };
 
   const handleGenerateLink = () => {
-    if (balance < 60) {
-      setErrorMessage('You need a minimum of 60 BMONK tokens to generate an invite link.');
+    if (balance < 100) {
+      setErrorMessage('You need a minimum of 100 BMONK tokens to generate an invite link.');
       return;
     }
     const link = `http://www.blackmonk.io/referral?start=${usdtAddress}`;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Modal from './Modal';
 import useSwap from "../hooks/useSwap";
 import InviteLinkGenerator from './InviteLinkGenerator'; // import the new component
@@ -9,9 +9,8 @@ const PrivateSale = ({ referral, web3, accounts, balance }) => {
   const [isCongratsModalOpen, setIsCongratsModalOpen] = useState(false);
   const [isUsdtEnabled, setIsUsdtEnabled] = useState(false);
   const [calculatedAmount, setCalculatedAmount] = useState(0);
-  const [currentPhaseRate, setCurrentPhaseRate] = useState(0.6); // default phase 1 rate
-  const [currentBmonkValue, setCurrentBmonkValue] = useState(0);
-  
+  const [currentPhaseRate] = useState(0.6); // default phase 1 rate
+
   const { enableBusd, swap, setAmount } = useSwap(web3, accounts, referral);
 
   const openModal = () => {
@@ -46,6 +45,9 @@ const PrivateSale = ({ referral, web3, accounts, balance }) => {
       toast.error(e.message);
     }
   };
+
+  // Calculate the current value of BMONK tokens in dollars
+  const currentBmonkValueInDollars = (+balance * currentPhaseRate).toFixed(2);
 
   return (
     <section className="my-28 max-md:mt-10 max-md:max-w-full container relative" id='buysection'>
@@ -114,7 +116,7 @@ const PrivateSale = ({ referral, web3, accounts, balance }) => {
               {accounts.length && (
                 <div className="mt-6 text-white">
                   <p>Available BMONK tokens in your wallet: {(+balance).toFixed(4)}</p>
-                  <p>Current value of BMONK token balance: ${currentBmonkValue.toFixed(2)}</p>
+                  <p>Current value of BMONK token balance: ${currentBmonkValueInDollars}</p>
                 </div>
               )}
             </form>
