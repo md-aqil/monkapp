@@ -92,7 +92,7 @@ const PrivateSale = ({ referral, web3, accounts, balance }) => {
                 <button
                   type="button"
                   onClick={handleMaxClick}
-                  className="text-white bg-lime-300 text-black px-3 py-1 rounded"
+                  className=" bg-lime-300 text-black px-3 py-1 rounded"
                 >
                   MAX
                 </button>

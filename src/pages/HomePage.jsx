@@ -231,7 +231,7 @@ export default function HomePage() {
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="https://t.me/blackmonk_io" target="_blank">
                   <img src="./telegram.png" alt="" />
                 </a>
               </li>

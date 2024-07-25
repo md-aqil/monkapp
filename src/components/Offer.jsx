@@ -9,7 +9,7 @@ const Offer = () => {
   return (
    <>
  
-<section className="flex justify-center items-center px-16 py-20 bg-neutral-900 max-md:px-5">
+<section className="flex justify-center items-center px-16 py-20  max-md:px-5">
   <div className="pt-2 mt-5 w-full container max-md:max-w-full">
 
     <div className="flex gap-5 max-md:flex-col max-md:gap-0 justify-center align-middle">
@@ -33,7 +33,7 @@ const Offer = () => {
            
             <li className="flex gap-4 mt-7">
               <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d55a713a849c85972ef39824c1e9fec22cbbb69be57470443009f5810a3757ad?apiKey=b4d1b9e87b084579b1e2475047caf617&" className="shrink-0 aspect-square w-[30px]" alt="" />
-              <p>1 Room, 1 Adults</p>
+              <p>1 Adults</p>
             </li>
 
             <li className="flex gap-4 mt-7">
