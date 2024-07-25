@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 import useSwap from "../hooks/useSwap";
-import InviteLinkGenerator from './InviteLinkGenerator'; // import the new component
+import InviteLinkGenerator from './InviteLinkGenerator';
 import { toast } from 'react-toastify';
 
 const PrivateSale = ({ referral, web3, accounts, balance }) => {
@@ -9,9 +9,22 @@ const PrivateSale = ({ referral, web3, accounts, balance }) => {
   const [isCongratsModalOpen, setIsCongratsModalOpen] = useState(false);
   const [isUsdtEnabled, setIsUsdtEnabled] = useState(false);
   const [calculatedAmount, setCalculatedAmount] = useState(0);
+  const [usdtBalance, setUsdtBalance] = useState(0);
+  const [usdtAmount, setUsdtAmount] = useState("");
   const [currentPhaseRate] = useState(0.6); // default phase 1 rate
 
-  const { enableBusd, swap, setAmount } = useSwap(web3, accounts, referral);
+  const { enableBusd, swap, setAmount, getUsdtBalance } = useSwap(web3, accounts, referral);
+
+  useEffect(() => {
+    const fetchUsdtBalance = async () => {
+      if (accounts.length) {
+        const balance = await getUsdtBalance();
+        setUsdtBalance(balance);
+      }
+    };
+
+    fetchUsdtBalance();
+  }, [accounts, getUsdtBalance]);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -26,9 +39,10 @@ const PrivateSale = ({ referral, web3, accounts, balance }) => {
   };
 
   const handleAmountChange = (e) => {
-    const usdtAmount = e.target.value;
-    setAmount(usdtAmount);
-    const bmonkAmount = usdtAmount / currentPhaseRate;
+    const amount = e.target.value;
+    setUsdtAmount(amount);
+    setAmount(amount);
+    const bmonkAmount = amount / currentPhaseRate;
     setCalculatedAmount(bmonkAmount.toFixed(2));
   };
 
@@ -46,7 +60,14 @@ const PrivateSale = ({ referral, web3, accounts, balance }) => {
     }
   };
 
-  // Calculate the current value of BMONK tokens in dollars
+  const handleMaxClick = () => {
+    const maxAmount = usdtBalance;
+    setUsdtAmount(maxAmount);
+    setAmount(maxAmount);
+    const bmonkAmount = maxAmount / currentPhaseRate;
+    setCalculatedAmount(bmonkAmount.toFixed(2));
+  };
+
   const currentBmonkValueInDollars = (+balance * currentPhaseRate).toFixed(2);
 
   return (
@@ -63,17 +84,25 @@ const PrivateSale = ({ referral, web3, accounts, balance }) => {
               {referral && <p className="text-lime-300 mb-5"> Your Referral: {referral}</p>}
               <div className="flex gap-5 justify-between text-sm max-md:flex-wrap max-md:max-w-full">
                 <label
-                  htmlFor="busdAmount"
+                  htmlFor="usdtAmount"
                   className="font-semibold text-white leading-[114%]"
                 >
                   Enter USDT Amount
                 </label>
+                <button
+                  type="button"
+                  onClick={handleMaxClick}
+                  className="text-white bg-lime-300 text-black px-3 py-1 rounded"
+                >
+                  MAX
+                </button>
               </div>
               <div className="flex gap-5 p-2 mt-3.5 bg-white rounded-lg border border-solid shadow-sm border-zinc-950 max-md:flex-wrap max-md:max-w-full">
                 <input
                   onChange={handleAmountChange}
+                  value={usdtAmount}
                   type="number"
-                  id="busdAmount"
+                  id="usdtAmount"
                   className="flex-auto my-auto text-base leading-6 p-3 text-neutral-600"
                   placeholder="Enter USDT Amount"
                 />
@@ -117,6 +146,7 @@ const PrivateSale = ({ referral, web3, accounts, balance }) => {
                 <div className="mt-6 text-white">
                   <p>Available BMONK tokens in your wallet: {(+balance).toFixed(4)}</p>
                   <p>Current value of BMONK token balance: ${currentBmonkValueInDollars}</p>
+                  <p>Available USDT balance in your wallet: {usdtBalance} USDT</p>
                 </div>
               )}
             </form>

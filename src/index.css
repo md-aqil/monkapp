@@ -72,7 +72,9 @@ a {
 /* Hover effect */
 button:hover, a:hover {
   transform: scale(1.05); /* Slightly grow */
+  background: #72a323;
 }
+
 
 /* Active click effect */
 button:active, a:active {
