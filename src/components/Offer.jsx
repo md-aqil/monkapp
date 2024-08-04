@@ -49,7 +49,7 @@ const Offer = () => {
       </div>
 
       <div className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/976d6622f9363107e45feb37a4b1a2af75f4bb81214c7a87595f6ec0ab5f2fc6?apiKey=b4d1b9e87b084579b1e2475047caf617&" className=" w-full aspect-[0.95] max-md:mt-10 max-md:max-w-full" alt="Goa Tour Illustration" />
+        <img loading="lazy" src="./trip.png" className=" w-full aspect-[0.95] max-md:mt-10 max-md:max-w-full" alt="Goa Tour Illustration" />
       </div>
     </div>
   </div>

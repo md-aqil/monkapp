@@ -129,6 +129,7 @@ const PrivateSale = ({ referral, web3, accounts, balance }) => {
                 >
                   Buy
                 </button>
+
               </div>
 
               <div className="justify-center px-12 py-3.5 mt-6 text-xl leading-6 text-center text-lime-300 rounded border border-dashed border-lime-300 border-opacity-40 max-md:px-5 max-md:max-w-full">
@@ -150,6 +151,14 @@ const PrivateSale = ({ referral, web3, accounts, balance }) => {
                 </div>
               )}
             </form>
+           
+            
+          <a href="./buy.pdf" target='_blank' className="flex gap-2 justify-center self-start px-9 py-2.5 mt-6 text-sm text-right bg-lime-500 rounded  max-md:px-5 text-gray-100">
+             <span className="my-auto">How to Buy?</span>
+            
+            </a>
+
+
           </div>
 
           <div className="flex flex-col ml-5 w-[50%] max-md:ml-0 max-md:w-full">
