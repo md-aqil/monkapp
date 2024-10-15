@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/monkapp/static/css/main.c5d55e3d.css",
+    "main.js": "/monkapp/static/js/main.6b2165e4.js",
+    "static/js/453.9c3f1ff3.chunk.js": "/monkapp/static/js/453.9c3f1ff3.chunk.js",
+    "index.html": "/monkapp/index.html",
+    "main.c5d55e3d.css.map": "/monkapp/static/css/main.c5d55e3d.css.map",
+    "main.6b2165e4.js.map": "/monkapp/static/js/main.6b2165e4.js.map",
+    "453.9c3f1ff3.chunk.js.map": "/monkapp/static/js/453.9c3f1ff3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c5d55e3d.css",
+    "static/js/main.6b2165e4.js"
+  ]
+}
